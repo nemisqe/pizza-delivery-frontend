@@ -1,32 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import HeaderNavLink from './header-nav-link';
 
-const HeaderNavList = () => {
+export default class HeaderNavList extends Component {
 
-    const navData = [
-        { label: 'Home', linkHref: '#', currentPage: true, id: 1 },
-        { label: 'Menu', linkHref: '#', currentPage: false, id: 2 },
-        { label: 'Registration', linkHref: '#', currentPage: false, id: 3},
-        { label: 'Login', linkHref: '#', currentPage: false, id: 4 },
-        { label: 'Contacts', linkHref: '#', current: false, id: 5 }
-    ];
+    state = {
+        navData: [
+            { label: 'Home', linkHref: '#', currentPage: true, id: 1 },
+            { label: 'Menu', linkHref: '#', currentPage: false, id: 2 },
+            { label: 'Registration', linkHref: '#', currentPage: false, id: 3},
+            { label: 'Login', linkHref: '№', currentPage: false, id: 4 },
+            { label: 'Contacts', linkHref: '#', current: false, id: 5 }]
+    };
 
-    const elements = navData.map(x => {
+   render() {
+       const elements = this.state.navData.map(x => {
 
-        const { id, ...itemProps } = x;
+           const { label } = this.state;
+           const { id, ...itemProps } = x;
 
-        return (
-            <li className="nav-item" key={ id }>
-                <HeaderNavLink { ...itemProps }/>
-            </li>
-        );
-    });
+           return (
+               <li className="nav-item" key={ id }>
+                   <HeaderNavLink { ...itemProps }/>
+               </li>
+           );
+       });
 
-    return (
-        <ul className="navbar-nav">
-            { elements }
-        </ul>
-    );
+       return (
+           <ul className="navbar-nav">
+               { elements }
+           </ul>
+       );
+   };
 };
-
-export default HeaderNavList;

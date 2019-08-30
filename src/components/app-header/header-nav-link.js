@@ -7,7 +7,7 @@ export default class HeaderNavLink extends Component{
         const { label, linkHref, currentPage = true } = this.props;
 
         return (
-            <a className="nav-link" href={ linkHref }> { label } </a>
+                <a className="nav-link" href={ linkHref }> { label } </a>
         );
     }
 }
