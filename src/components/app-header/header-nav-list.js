@@ -7,7 +7,7 @@ export default class HeaderNavList extends Component {
         navData: [
             { label: 'Home', linkHref: '/', currentPage: true, id: 1 },
             { label: 'Menu', linkHref: '/menu', currentPage: false, id: 2 },
-            { label: 'Registration', linkHref: '#', currentPage: false, id: 3},
+            { label: 'Registration', linkHref: '/registration', currentPage: false, id: 3},
             { label: 'Login', linkHref: '/login', currentPage: false, id: 4 },
             { label: 'Contacts', linkHref: '#', current: false, id: 5 }]
     };
