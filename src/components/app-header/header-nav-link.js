@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class HeaderNavLink extends Component{
 
@@ -7,7 +8,7 @@ export default class HeaderNavLink extends Component{
         const { label, linkHref, currentPage = true } = this.props;
 
         return (
-                <a className="nav-link" href={ linkHref }> { label } </a>
+            <Link className="nav-link" to={ linkHref }> { label } </Link>
         );
     }
 }

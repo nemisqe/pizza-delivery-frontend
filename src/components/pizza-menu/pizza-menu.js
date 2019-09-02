@@ -3,6 +3,7 @@ import './pizza-menu.css';
 import PizzaService from '../../services/pizza-delivery-service';
 import Spinner from '../spinner';
 import ErrorIndicator from '../../components/error-indicator';
+import App from '../app';
 
 export default class PizzaMenu extends Component {
 
@@ -12,7 +13,7 @@ export default class PizzaMenu extends Component {
         pizza: {},
         loading: true,
         error: false,
-        pizzaList: null
+        pizzaListInputs: null
     };
 
     constructor() {
@@ -22,11 +23,15 @@ export default class PizzaMenu extends Component {
     componentDidMount() {
         this.pizzaService
             .getAllPizzas()
-            .then(pizzaList => {
-                this.setState({ pizzaList })
+            .then(pizzaListInputs => {
+                this.setState({ pizzaListInputs })
             })
             .then(this.onPizzaLoaded)
             .catch(this.onError);
+    };
+
+    componentDidCatch() {
+        this.setState({ error: true });
     };
 
     onPizzaLoaded = (pizza) => {
@@ -43,30 +48,38 @@ export default class PizzaMenu extends Component {
     renderItems = (arr) => {
         return !arr ? null : arr.map(({ pizza_name, cooking_time, id }) => {
             return (
-                <li className="list-group-item" key={id}>
-                    { `Pizza: ${pizza_name};  Cooking time is ${cooking_time} sec` }
-                </li>
+                <div className="form-check">
+
+                        <input className="form-check-input filled-in" type="checkbox" value=""  id={ id }/>
+                        <label className="form-check-label" htmlFor={ id }>
+                            { `Pizza: ${pizza_name};  Cooking time is ${cooking_time} sec` }
+                        </label>
+
+                </div>
             );
         });
     };
 
     render() {
 
-        const { pizza, loading, error, pizzaList } = this.state;
+        const { pizza, loading, error, pizzaListInputs } = this.state;
+        
+        if (error) {
+            return <ErrorIndicator/>
+        }
 
-        let items = this.renderItems(pizzaList);
+        let items = this.renderItems(pizzaListInputs);
 
-        const errorMessage = error ? <ErrorIndicator/> : null;
         const spinner = loading ? <Spinner/> : null;
 
         return (
-            <div className="container centered">
+            <div className="container centered form-check">
                 <h1>Menu</h1>
-                <ul className="list-group list-group-flush">
-                    { errorMessage }
+                <form className="menu-checkboxes-form">
                     { spinner }
                     { items }
-                </ul>
+                    <button type="submit">Make order</button>
+                </form>
             </div>
         );
     };

@@ -1,0 +1,16 @@
+.main-page__title {
+    text-align: center;
+    color: #ffda95;
+    font-size: 26px;
+}
+
+.main-page__welcome-title {
+    color: #fffd8c;
+    text-align: center;
+    font-size: 24px;
+}
+
+a {
+    font-size: 20px;
+    color: #2cdcff
+}
