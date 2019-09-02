@@ -23,14 +23,15 @@ export default class PizzaService {
         return this._transformPizza(pizza);
     }
 
-    _transformPizza(pizza) {
+    _transformPizza = (pizza) => {
         return {
             pizzaName: pizza.pizza_name,
-            cookingTime: pizza.cooking_time
+            cookingTime: pizza.cooking_time,
+            id: pizza.id
         };
     };
 }
 
 const pizza = new PizzaService();
 
-pizza.getPizzaById(2).then((body) => console.log(body));
+pizza.getAllPizzas().then((body) => console.log(body));
