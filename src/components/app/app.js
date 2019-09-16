@@ -1,36 +1,22 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import AppHeader from '../app-header/app-header';
-import LoginBlock from '../login-page/login-block';
-import '../login-page/login-form.css';
-import PizzaMenu from "../pizza-menu/pizza-menu";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import MainPage from '../main-page/main-page';
-import RegistrationPage from '../registration-page';
+import React, { Component, Fragment } from 'react';
+import '../login-page/login-page.css';
+import {Route, Switch} from "react-router-dom";
+import AppHeader from "../app-header/app-header";
+import { CartPage, HomePage } from '../pages';
 
-export default class App extends Component {
-
-    state = {
-        id: null
-    };
-
-    onPizzaSelected = (id) => {
-        this.setState({
-            selectedPizza: id
-        });
-    };
+class App extends Component {
 
     render() {
         return (
-            <Router>
-                <div>
-                    <AppHeader/>
-                    <Route path="/registration" component={ RegistrationPage }/>
-                    <Route path="/" exact component={ MainPage }/>
-                    <Route path="/login" component={ LoginBlock }/>
-                    <Route path="/menu" component={ PizzaMenu }/>
-                </div>
-            </Router>
+            <Fragment>
+                <AppHeader/>
+                <Switch>
+                    <Route path='/' exact component={ HomePage } />
+                    <Route path='/cart' excact component={ CartPage } />
+                </Switch>
+            </Fragment>
         );
     };
 }
+
+export default App;

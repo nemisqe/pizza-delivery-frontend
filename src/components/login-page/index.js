@@ -1,3 +1,3 @@
-import LoginBlock from './login-block';
+import LoginPage from './login-page';
 
-export default LoginBlock;
+export default LoginPage;

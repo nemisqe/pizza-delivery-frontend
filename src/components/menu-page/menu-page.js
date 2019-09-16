@@ -1,86 +1,47 @@
 import React, { Component } from 'react';
-import './pizza-menu.css';
 import PizzaService from '../../services/pizza-delivery-service';
 import Spinner from '../spinner';
 import ErrorIndicator from '../../components/error-indicator';
-import App from '../app';
+import './menu-page.css';
+import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
+import { connect } from 'react-redux';
+import { pizzaMenuLoaded } from '../../actions/pizza-menu-actions';
 
-export default class PizzaMenu extends Component {
-
-    pizzaService = new PizzaService();
-
-    state = {
-        pizza: {},
-        loading: true,
-        error: false,
-        pizzaListInputs: null
-    };
-
-    constructor() {
-        super();
-    };
+class PizzaMenu extends Component {
 
     componentDidMount() {
-        this.pizzaService
-            .getAllPizzas()
-            .then(pizzaListInputs => {
-                this.setState({ pizzaListInputs })
-            })
-            .then(this.onPizzaLoaded)
-            .catch(this.onError);
-    };
-
-    componentDidCatch() {
-        this.setState({ error: true });
-    };
-
-    onPizzaLoaded = (pizza) => {
-       this.setState({ pizza, loading: false });
-    };
-
-    onError = (err) => {
-        this.setState({
-            error: true,
-            loading: false
-        });
-    };
-
-    renderItems = (arr) => {
-        return !arr ? null : arr.map(({ pizza_name, cooking_time, id }) => {
-            return (
-                <div className="form-check">
-
-                        <input className="form-check-input filled-in" type="checkbox" value=""  id={ id }/>
-                        <label className="form-check-label" htmlFor={ id }>
-                            { `Pizza: ${pizza_name};  Cooking time is ${cooking_time} sec` }
-                        </label>
-
-                </div>
-            );
-        });
+        const { pizzaService } = this.props;
+        console.log(pizzaService);
+        const data = pizzaService.getAllPizzas();
+        console.log(data);
     };
 
     render() {
-
-        const { pizza, loading, error, pizzaListInputs } = this.state;
-        
-        if (error) {
-            return <ErrorIndicator/>
-        }
-
-        let items = this.renderItems(pizzaListInputs);
-
-        const spinner = loading ? <Spinner/> : null;
-
-        return (
-            <div className="container centered form-check">
-                <h1>Menu</h1>
-                <form className="menu-checkboxes-form">
-                    { spinner }
-                    { items }
-                    <button type="submit">Make order</button>
-                </form>
-            </div>
+        const { pizzaMenu } = this.props;
+        return(
+            <ul>
+                {
+                    pizzaMenu.map(pizza => {
+                        return(
+                            <li key={pizza.id}>
+                                
+                            </li>
+                        );
+                    })
+                }
+            </ul>
         );
     };
+}
+
+const mapStateToProps = ({ pizzaMenu }) => {
+    return {
+        pizzaMenu
+    };
 };
+
+const mapDispatchToProps = {
+    pizzaMenuLoaded
+};
+
+export default withPizzaDeliveryService()(connect(mapStateToProps, mapDispatchToProps)(PizzaMenu));

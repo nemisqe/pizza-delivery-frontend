@@ -3,8 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1e6eadd5-88c0-41dd-9b69-28536cd2612b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/header-nav-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/header-nav-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/error-indicator/error-indicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/error-indicator/error-indicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login-page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login-page/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login-page/login-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login-page/login-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login-page/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login-page/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu-page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-page/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu-page/menu-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-page/menu-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/registration-page/registration-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration-page/registration-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/spinner/spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/spinner/spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pizza-delivery-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pizza-delivery-service.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,72 +29,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main-page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/main-page/main-page.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="registration-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/registration-page/registration-page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration-page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/registration-page/registration-page.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-block.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/login-page/login-block.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
-              <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-form-container.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-container.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-form.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/login-page/index.js">
+        <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart-page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pages/cart-page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="26" selection-start-column="26" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu-list.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/menu-list/menu-list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pizza-delivery-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/pizza-delivery-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pizza-menu-actions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/pizza-menu-actions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="with-pizza-delivery-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/hoc/with-pizza-delivery-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,55 +117,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/login-form-body.js" />
-        <option value="$PROJECT_DIR$/src/components/login-block.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form-link.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form-sn-buttons.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form-facebook-aut.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form-google-aut.js" />
-        <option value="$PROJECT_DIR$/src/components/login-form-label-group.js" />
-        <option value="$PROJECT_DIR$/src/components/header-nav-item.js" />
-        <option value="$PROJECT_DIR$/src/components/app-header.js" />
-        <option value="$PROJECT_DIR$/src/components/slider-container.css" />
-        <option value="$PROJECT_DIR$/src/components/slider-container.js" />
-        <option value="$PROJECT_DIR$/src/components/header-nav-link.js" />
-        <option value="$PROJECT_DIR$/src/components/header-nav-list.js" />
-        <option value="$PROJECT_DIR$/src/components/app-header/index.js" />
+        <option value="$PROJECT_DIR$/src/components/error-boundry/index.js" />
+        <option value="$PROJECT_DIR$/src/components/error-boundry/error-boundry.js" />
+        <option value="$PROJECT_DIR$/src/hoc/with-login-service.js" />
+        <option value="$PROJECT_DIR$/src/actions/login-actions.js" />
+        <option value="$PROJECT_DIR$/src/reducers/login-reducer.js" />
+        <option value="$PROJECT_DIR$/src/reducers/root-reducer.js" />
+        <option value="$PROJECT_DIR$/src/initial-state/initial-state.js" />
+        <option value="$PROJECT_DIR$/src/actions/redux-token-auth-config.js" />
+        <option value="$PROJECT_DIR$/src/_helpers/history.js" />
+        <option value="$PROJECT_DIR$/src/_helpers/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/auth-reducer.js" />
+        <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/services/user-service.js" />
+        <option value="$PROJECT_DIR$/src/actions/user-actions.js" />
         <option value="$PROJECT_DIR$/src/components/login-page/index.js" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-form-label-group.js" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-form-label-mail.js" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-form-label-password.js" />
-        <option value="$PROJECT_DIR$/src/login-form.css" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-form.js" />
-        <option value="$PROJECT_DIR$/src/components/app/index.js" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-block.js" />
-        <option value="$PROJECT_DIR$/src/router.js" />
-        <option value="$PROJECT_DIR$/src/components/pizza-menu/index.js" />
-        <option value="$PROJECT_DIR$/src/components/spinner/index.js" />
-        <option value="$PROJECT_DIR$/src/components/spinner/spinner.js" />
-        <option value="$PROJECT_DIR$/src/components/spinner/spinner.css" />
-        <option value="$PROJECT_DIR$/src/components/error-indicator/error-indicator.css" />
-        <option value="$PROJECT_DIR$/src/components/error-indicator/error-indicator.js" />
-        <option value="$PROJECT_DIR$/src/components/error-indicator/index.js" />
-        <option value="$PROJECT_DIR$/src/services/pizza-delivery-service.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/pizza-menu/pizza-menu.js" />
-        <option value="$PROJECT_DIR$/src/components/pizza-menu/pizza-menu.css" />
-        <option value="$PROJECT_DIR$/src/components/main-page/index.js" />
-        <option value="$PROJECT_DIR$/src/components/main-page/main-page.js" />
-        <option value="$PROJECT_DIR$/src/components/app-header/header-nav-link.js" />
-        <option value="$PROJECT_DIR$/src/components/registration-page/index.js" />
-        <option value="$PROJECT_DIR$/src/components/app-header/header-nav-list.js" />
-        <option value="$PROJECT_DIR$/src/components/app/app.js" />
-        <option value="$PROJECT_DIR$/src/components/app-header/app-header.css" />
-        <option value="$PROJECT_DIR$/src/components/app-header/app-header.js" />
-        <option value="$PROJECT_DIR$/src/components/login-page/login-form.css" />
-        <option value="$PROJECT_DIR$/src/components/main-page/main-page.css" />
+        <option value="$PROJECT_DIR$/src/actions/types.js" />
+        <option value="$PROJECT_DIR$/src/reducers/error-reducer.js" />
+        <option value="$PROJECT_DIR$/src/is-empty.js" />
+        <option value="$PROJECT_DIR$/src/actions/authentication.js" />
+        <option value="$PROJECT_DIR$/src/hoc/withLoginService.css" />
         <option value="$PROJECT_DIR$/src/components/registration-page/registration-page.js" />
-        <option value="$PROJECT_DIR$/src/components/registration-page/registration-page.css" />
+        <option value="$PROJECT_DIR$/src/components/login-page/login-page.js" />
+        <option value="$PROJECT_DIR$/src/services/login-service.js" />
+        <option value="$PROJECT_DIR$/src/reducers/reducer.js" />
+        <option value="$PROJECT_DIR$/src/actions/pizza-menu-actions.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/hoc/withLoginService.js" />
+        <option value="$PROJECT_DIR$/src/components/menu-page/menu-page.js" />
+        <option value="$PROJECT_DIR$/src/hoc/withPizzaDeliveryService.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/cart-page/cart-page.css" />
+        <option value="$PROJECT_DIR$/src/components/pages/home-page/home-page.css" />
+        <option value="$PROJECT_DIR$/src/components/pages/cart-page/index.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/home-page/index.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/cart-page/cart-page.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/index.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/cart-page.js" />
+        <option value="$PROJECT_DIR$/src/components/menu-list-item/menu-list-itemm.css" />
+        <option value="$PROJECT_DIR$/src/components/menu-list/menu-list.css" />
+        <option value="$PROJECT_DIR$/src/components/menu-list/index.js" />
+        <option value="$PROJECT_DIR$/src/store.js" />
+        <option value="$PROJECT_DIR$/src/components/app-header/app-header.js" />
+        <option value="$PROJECT_DIR$/src/components/menu-list-item/index.js" />
+        <option value="$PROJECT_DIR$/src/components/app/app.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/home-page.js" />
+        <option value="$PROJECT_DIR$/src/login-service-context/login-service-context.js" />
+        <option value="$PROJECT_DIR$/src/components/hoc/with-pizza-delivery-service.js" />
+        <option value="$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.js" />
+        <option value="$PROJECT_DIR$/src/components/menu-list/menu-list.js" />
+        <option value="$PROJECT_DIR$/src/services/pizza-delivery-service.js" />
+        <option value="$PROJECT_DIR$/src/reducers/index.js" />
       </list>
     </option>
   </component>
@@ -202,6 +217,12 @@
               <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,7 +244,48 @@
               <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login-page" type="462c0819:PsiDirectoryNode" />
+              <item name="hoc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menu-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menu-list-item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menu-page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pizza-delivery-service-context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizza-delivery-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pizza-delivery-front" type="b2602c69:ProjectViewProjectNode" />
@@ -239,23 +301,31 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="pizzaMenu&#9;null&#9;null&#10;login-service&#9;FILE&#9;file://E:/pizza-delivery-front/src/login-service-context/login-service-context.js&#10;authentication&#9;null&#9;null&#10;root&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/redux-practice-2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="E:\pizza-delivery-front\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\pizza-delivery-front\src\components\login-page" />
-      <recent name="E:\pizza-delivery-front\src\components\app-header" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\pizza-delivery-front\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pizza-delivery-front\src\components" />
+      <recent name="E:\pizza-delivery-front\src\components\pages" />
+      <recent name="E:\pizza-delivery-front\src\actions" />
+      <recent name="E:\pizza-delivery-front\src\types" />
+      <recent name="E:\pizza-delivery-front\src\components\login-page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -291,35 +361,53 @@
       <workItem from="1567336717249" duration="604000" />
       <workItem from="1567405650761" duration="6336000" />
       <workItem from="1567432935612" duration="9661000" />
-      <workItem from="1567444462126" duration="1724000" />
+      <workItem from="1567444462126" duration="2172000" />
+      <workItem from="1567494902804" duration="2861000" />
+      <workItem from="1567512261026" duration="1744000" />
+      <workItem from="1567599352624" duration="1756000" />
+      <workItem from="1567688753395" duration="23000" />
+      <workItem from="1567781695579" duration="6215000" />
+      <workItem from="1568055903885" duration="4119000" />
+      <workItem from="1568097250177" duration="17502000" />
+      <workItem from="1568182285000" duration="10500000" />
+      <workItem from="1568285723434" duration="4787000" />
+      <workItem from="1568291169667" duration="7128000" />
+      <workItem from="1568354986161" duration="7829000" />
+      <workItem from="1568539876806" duration="8588000" />
+      <workItem from="1568571142327" duration="8681000" />
+      <workItem from="1568615289400" duration="12061000" />
+      <workItem from="1568645385922" duration="13181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81855000" />
+    <option name="totallyTimeSpent" value="189278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2247191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2161269" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34330484" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5009914" side_tool="true" weight="0.21937323" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4990086" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32905984" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,341 +418,276 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        <state relative-caret-position="225">
+          <caret line="442" column="8" selection-start-line="442" selection-start-column="8" selection-end-line="442" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-block.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/redux-token-auth/src/types.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="148">
+          <caret line="176" column="11" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-label-mail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-label-password.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/redux-token-auth-config.js" />
+    <entry file="file://$PROJECT_DIR$/src/_helpers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app-header/header-nav-link.js">
+    <entry file="file://$PROJECT_DIR$/src/_helpers/history.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        <state relative-caret-position="16">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/initial-state/initial-state.js" />
+    <entry file="file://$PROJECT_DIR$/src/actions/user-actions.js" />
+    <entry file="file://$PROJECT_DIR$/src/services/registration-service.js" />
     <entry file="file://$PROJECT_DIR$/src/components/login-page/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-google-aut.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js" />
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/slider-container.css" />
-    <entry file="file://$PROJECT_DIR$/src/components/slider-container.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/app-header/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/router.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/spinner/spinner.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_pro-react-redux-master.zip/pro-react-redux-master/star-db/40-component-did-mount-practice/src/services/swapi-service.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/error-indicator/error-indicator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/error-indicator/error-indicator.css">
-      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/spinner/spinner.js">
+    <entry file="file://$PROJECT_DIR$/src/services/user-service.js" />
+    <entry file="file://$PROJECT_DIR$/src/reducers/auth-reducer.js" />
+    <entry file="file://$PROJECT_DIR$/src/actions/login-actions.js" />
+    <entry file="file://$PROJECT_DIR$/src/hoc/with-login-service.js" />
+    <entry file="file://$PROJECT_DIR$/src/is-empty.js" />
+    <entry file="file://$PROJECT_DIR$/src/actions/types.js" />
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication.js" />
+    <entry file="file://$PROJECT_DIR$/src/reducers/login-reducer.js" />
+    <entry file="file://$PROJECT_DIR$/src/reducers/error-reducer.js" />
+    <entry file="file://$PROJECT_DIR$/src/hoc/withLoginService.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/registration-page/registration-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/error-indicator/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/pizza-delivery-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_pro-react-redux-master.zip/pro-react-redux-master/star-db/40-component-did-mount-practice/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pizza-menu/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/spinner/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="723">
+          <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pizza-menu/pizza-menu.css">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/services/login-service.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="224">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/main-page/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/menu-page/menu-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/home-page/home-page.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/cart-page/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pizza-menu/pizza-menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1328">
-          <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/cart-page/cart-page.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/main-page/main-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list/menu-list.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/registration-page/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app-header/header-nav-link.js">
+    <entry file="file://$PROJECT_DIR$/src/components/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="80">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app-header/header-nav-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="29" column="67" lean-forward="true" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app-header/app-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/app-header/app-header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        <state relative-caret-position="416">
+          <caret line="26" column="65" lean-forward="true" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_pro-react-redux-master.zip/pro-react-redux-master/re-store/30-connecting-components/src/components/book-list/book-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login-service-context/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login-service-context/login-service-context.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_pro-react-redux-master.zip/pro-react-redux-master/re-store/30-connecting-components/src/components/bookstore-service-context/bookstore-service-context.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pizza-delivery-service-context/pds-context.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/home-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-label-mail.js">
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list-item/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="32">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-label-password.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/hoc/with-pizza-delivery-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/pizza-menu-actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/cart-page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-facebook-aut.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-block.js">
+    <entry file="file://$PROJECT_DIR$/src/components/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-container.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="16">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/main-page/main-page.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form-google-aut.js">
+    <entry file="file://$PROJECT_DIR$/src/services/pizza-delivery-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="144">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/registration-page/registration-page.css">
+    <entry file="file://$PROJECT_DIR$/src/components/menu-list/menu-list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/registration-page/registration-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        <state relative-caret-position="352">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login-page/login-form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>

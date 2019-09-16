@@ -5,7 +5,7 @@ const ErrorIndicator = () => {
     return (
         <div className="container centered">
             <span className="error-text">
-                Oops. Page not found
+                Oops. Page not found :(
             </span>
         </div>
     );

@@ -1,3 +1,3 @@
-import PizzaMenu from './pizza-menu';
+import MenuPage from './menu-page';
 
-export default PizzaMenu;
+export default MenuPage;
