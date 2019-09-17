@@ -6,6 +6,7 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'MENU_LOADED':
             return {
+                ...state,
                 pizzaMenu: action.payload
             };
 

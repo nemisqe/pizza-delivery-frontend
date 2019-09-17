@@ -9,12 +9,9 @@ class MenuList extends Component {
 
     componentDidMount() {
         const { pizzaService } = this.props;
-        const data = pizzaService.getAllPizzas();
-        console.log(data);
-        this.props.pizzaMenuLoaded(data);
+        pizzaService.getAllPizzas()
+            .then(data => this.props.pizzaMenuLoaded(data));
     };
-
-    //get arr of obj
 
     render() {
         const { pizzaMenu } = this.props;
