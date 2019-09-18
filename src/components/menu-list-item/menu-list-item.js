@@ -1,14 +1,24 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './menu-list-item.css';
 
-const MenuListItem = ({ pizza }) => {
-    const { pizza_name, cooking_time } = pizza;
+const MenuListItem = ({ pizza, onAddedToCart }) => {
+    const { pizza_name, cooking_time, pizza_pictures } = pizza;
     return(
-        <Fragment>
-            <span>{ pizza_name }</span>
-            <span>{ cooking_time }</span>
-        </Fragment>
+        <div className="pizza-list-item">
+            <div className="pizza-cover">
+                <img src={`http://localhost:3001/pizza-pictures/${pizza_pictures}`} alt="pizza-cover" width="120" height="120"/>
+            </div>
+            <div className="pizza-details">
+                <a href="#" className="pizza-name">{ pizza_name }</a>
+                <div className="pizza-cooking-time">{ cooking_time } seconds</div>
+                <button
+                    onClick={onAddedToCart}
+                    className="btn btn-info add-to-cart">Add to cart</button>
+            </div>
+        </div>
     );
 };
+
+//120x120
 
 export default MenuListItem;

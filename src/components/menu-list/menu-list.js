@@ -2,40 +2,61 @@ import React, { Component } from 'react';
 import MenuListItem from '../menu-list-item';
 import './menu-list.css';
 import { connect } from 'react-redux';
-import { pizzaMenuLoaded } from "../../actions/pizza-menu-actions";
+import {fetchMenu, pizzaAddedTocart} from "../../actions/pizza-menu-actions";
 import withPizzaDeliveryService from '../hoc/with-pizza-delivery-service';
+import compose from '../../utils';
+import Spinner from "../spinner/spinner";
+import ErrorIndicator from "../error-indicator/error-indicator";
 
-class MenuList extends Component {
+const MenuList = ({ pizzaMenu, onAddedToCart }) => {
+    return(
+        <ul className="pizza-list">
+            {
+                pizzaMenu.map(pizza => {
+                    return(
+                        <li key={pizza.id}><MenuListItem
+                            onAddedToCart={() => onAddedToCart(pizza.id)}
+                            pizza={pizza} /></li>
+                    );
+                })
+            }
+        </ul>
+    );
+};
+
+class MenuListContainer extends Component {
 
     componentDidMount() {
-        const { pizzaService } = this.props;
-        pizzaService.getAllPizzas()
-            .then(data => this.props.pizzaMenuLoaded(data));
+        this.props.fetchMenu();
     };
 
     render() {
-        const { pizzaMenu } = this.props;
-        console.log(pizzaMenu);
-        return(
-            <ul>
-                {
-                    pizzaMenu.map(pizza => {
-                        return(
-                            <li key={pizza.id}><MenuListItem pizza={pizza} /></li>
-                        );
-                    })
-                }
-            </ul>
-        );
+        const { pizzaMenu, loading, error, onAddedToCart } = this.props;
+        
+        if (loading) {
+            return <Spinner/>;
+        }
+
+        if (error) {
+            return <ErrorIndicator/>;
+        }
+
+        return <MenuList pizzaMenu={pizzaMenu} onAddedToCart={onAddedToCart} />
     };
 }
 
-const mapStateToProps = ({ pizzaMenu }) => {
-    return { pizzaMenu };
+const mapStateToProps = ({ pizzaMenu, loading, error }) => {
+    return { pizzaMenu, loading, error };
 };
 
-const mapDispatchToProps = {
-    pizzaMenuLoaded
+const mapDispatchToProps = (dispatch, { pizzaService }) => {
+    return {
+        fetchMenu: fetchMenu(pizzaService, dispatch),
+        onAddedToCart: (id) => dispatch(pizzaAddedTocart(id))
+    };
 };
 
-export default withPizzaDeliveryService()(connect(mapStateToProps, mapDispatchToProps)(MenuList));
+export default compose(
+    withPizzaDeliveryService(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(MenuListContainer);
