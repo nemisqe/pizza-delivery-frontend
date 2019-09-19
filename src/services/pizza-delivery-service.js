@@ -9,4 +9,9 @@ export default class PizzaService {
             .then(res => res.data);
 
     };
+
+    getUsers = async () => {
+        return await axios.get(`${this._basicUrl}clients`)
+            .then(res => res.data);
+    };
 }

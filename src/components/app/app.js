@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../login-page/login-page.css';
 import {Route, Switch} from "react-router-dom";
 import AppHeader from "../app-header/app-header";
 import { CartPage, HomePage } from '../pages';
