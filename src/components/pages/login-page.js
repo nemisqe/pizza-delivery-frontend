@@ -3,43 +3,43 @@ import './registration-page.css';
 import { connect } from 'react-redux';
 import compose from '../../utils';
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
-import { fetchUserData } from '../../actions/user-actions';
+import { fetchLoginUserData } from '../../actions/user-actions';
+import {Redirect} from "react-router-dom";
 
 class LoginPage extends Component {
 
     state = {
-        username: '',
+        clientName: '',
         password: ''
     };
 
-    componentDidMount() {
-        this.props.fetchUserData();
-    };
-
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
-
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        const userData = {
-            username: this.state.username,
-            password: this.state.password
-        };
-        console.log(userData);
+        if (this.state.clientName === '' || this.state.password === '') {
+            e.preventDefault();
+            alert('Fill in username and password');
+        } else {
+            this.props.fetchUserData(this.state.clientName, this.state.password);
+        }
     };
 
     render() {
+
+        const { isAuthenticated } = this.props;
+
+        if (isAuthenticated) {
+            return <Redirect to='/' />
+        }
+
         return (
-            <form className="reg-page__form" onSubmit={this.handleSubmit}>
+            <form className="reg-page__form">
                 <h3>Login below</h3>
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR NAME</p>
                     <input type="text"
                            className="input"
-                           name="username"
-                           onChange={this.handleChange}
-                           value={this.state.username}/>
+                           onChange={(e) => this.setState({ clientName: e.target.value })}
+                           value={this.state.clientName}/>
                     <div className="line-box">
                         <div className="line"></div>
                     </div>
@@ -47,27 +47,27 @@ class LoginPage extends Component {
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR PASSWORD</p>
                     <input type="text"
-                           name="password"
                            className="input"
                            value={this.state.password}
-                           onChange={this.handleChange}/>
+                           onChange={(e) => this.setState({ password: e.target.value })}/>
                     <div className="line-box">
                         <div className="line"></div>
                     </div>
                 </label>
-                <button type="submit" className="reg-page__button">submit</button>
+                <button className="reg-page__button" onClick={this.handleSubmit}>submit</button>
             </form>
         );
     };
 }
 
-const mapStateToProps = ({userData}) => {
-    return { userData };
+const mapStateToProps = ({ clientName, isAuthenticated }) => {
+    console.log({clientName, isAuthenticated});
+    return { clientName, isAuthenticated };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {
     return {
-        fetchUserData: fetchUserData(pizzaService, dispatch)
+        fetchUserData: fetchLoginUserData(pizzaService, dispatch)
     };
 };
 

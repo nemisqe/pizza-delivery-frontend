@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './registration-page.css';
 
-export default class RegistrationPage extends Component {
+class RegistrationPage extends Component {
 
     render() {
         return (
@@ -30,3 +30,5 @@ export default class RegistrationPage extends Component {
         );
     };
 }
+
+export default RegistrationPage;

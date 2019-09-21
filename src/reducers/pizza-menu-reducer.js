@@ -1,5 +1,7 @@
 const initialState = {
     pizzaMenu: [],
+    clientName: '',
+    isAuthenticated: false,
     loading: true,
     error: null,
     cartItems: [],
@@ -60,6 +62,19 @@ const updateCartItem = (pizza, item = {}, quantity) => {
     };
 };
 
+const checkAuth = (state) => {
+    const login = localStorage.getItem('clientName');
+    if (login) {
+        return {
+            ...state,
+            clientName: login,
+            isAuthenticated: true
+        };
+    }
+
+    return state;
+};
+
 const pizzaMenuReducer = (state = initialState, action) => {
 
     switch (action.type) {
@@ -90,6 +105,42 @@ const pizzaMenuReducer = (state = initialState, action) => {
         case 'ALL_PIZZAS_REMOVED_FROM_CART':
             const item = state.cartItems.find(({id}) => id === action.payload);
             return updateOrder(state, action.payload, -item.count);
+
+        case 'FETCH_USER_DATA_SUCCESS':
+            return {
+                ...state,
+                userData: action.payload.data,
+                loading: false,
+                isAuthenticated: true
+            };
+
+        case 'POST_LOGIN_SUCCESS':
+            window.alert('Теперь вы можете сделать заказ');
+            localStorage.setItem('clientName', action.payload[0]);
+            return {
+                ...state,
+                clientName: action.payload[0],
+                isAuthenticated: true
+            };
+
+        case 'USER_LOGOUT':
+
+            return {
+                ...state,
+                clientName: '',
+                isAuthenticated: false
+            };
+
+        case 'CHECK_AUTHENTICATION_FROM_LOCAL_STORAGE':
+            return checkAuth(state);
+
+        case 'FETCH_USER_DATA_FAILURE':
+            return {
+                ...state,
+                userData: [],
+                loading: false,
+                error: action.payload
+            };
 
         default:
             return state;
