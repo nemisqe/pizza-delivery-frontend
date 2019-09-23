@@ -1,33 +1,24 @@
-import pizzaMenuReducer from "../reducers/pizza-menu-reducer";
-
-export const checkAuthenticationFromLocalStorage = () => {
-
-};
-
 const correctLogin = (...args) => ({
     type: 'POST_LOGIN_SUCCESS',
-    payload: args,
+    payload: args
 });
 
-const userError = (error) => {
-    return {
-        type: 'FETCH_USER_DATA_FAILURE',
-        payload: error
-    }
-};
+const userError = (error) => ({
+    type: 'FETCH_USER_DATA_FAILURE',
+    payload: error
+});
 
-const userLogout = () => {
-    return {
-        type: 'USER_LOGOUT'
-    };
-};
+const userLogout = () => ({
+    type: 'USER_LOGOUT'
+});
 
-const registrationSuccess = (...args) => {
-    return {
-        type: 'USER_REGISTRATION_SUCCESS',
-        payload: args
-    };
-};
+const registrationSuccess = () => ({
+    type: 'USER_REGISTRATION_SUCCESS'
+});
+
+export const checkAuth = () => ({
+    type: 'CHECK_USER_FOR_AUTH'
+});
 
 const fetchLoginUserData = (pizzaService, dispatch) => (clientName, password) => {
     pizzaService.loginUser(clientName, password)
@@ -36,9 +27,12 @@ const fetchLoginUserData = (pizzaService, dispatch) => (clientName, password) =>
 };
 
 const fetchRegistrationUserData = (pizzaService, dispatch) => (clientName, password) => {
-    pizzaService.registrateUser(clientName, password)
-        .then(e => dispatch(registrationSuccess(e.clientName)))
-        .catch(err => dispatch(userError(err)));
+    pizzaService.registerUser(clientName, password)
+        .then(() => dispatch(registrationSuccess()))
+        .catch(err => {
+            console.log(err);
+            dispatch(userError(err))
+        });
 };
 
 export {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import AppHeader from "../app-header/app-header";
 import { CartPage, HomePage } from '../pages';
@@ -6,7 +6,9 @@ import LoginPage from '../../components/pages/login-page';
 import RegistrationPage from '../../components/pages/registration-page';
 import { connect } from 'react-redux';
 
+
 const App = ({ isAuthenticated }) => {
+
     return (
         <main role="main" className="container">
             <AppHeader/>

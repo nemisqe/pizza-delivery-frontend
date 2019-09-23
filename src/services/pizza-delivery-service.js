@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { loginSuccess } from '../actions/user-actions';
 
 export default class PizzaService {
 
@@ -8,7 +7,6 @@ export default class PizzaService {
     getAllPizzas = async () => {
         return await axios.get(`${this._basicUrl}menu/`)
             .then(res => res.data);
-
     };
 
     getUsers = async () => {
@@ -17,32 +15,33 @@ export default class PizzaService {
     };
 
     loginUser = async (username, password) => {
-        const res = await axios.post(`${this._basicUrl}authentication/`, {
+        return await axios.post(`${this._basicUrl}authentication/`, {
             "clientName": username,
             "password": password
         })
             .then(res => {
-                console.log('login successful!', res.data[0]);
                 return res.data[0];
             })
             .catch(error => {
                 console.error(error);
             });
-
-        return res;
     };
 
-    registrateUser = async (username, password) => {
-        const res = await axios.post(`${this._basicUrl}clients/add/`, {
+    registerUser = async (username, password) => {
+        return await axios.post(`${this._basicUrl}clients/add/`, {
             "clientName": username,
             "password": password
         })
             .then(res => {
-                console.log('registration successful!', res.data[0]);
+                alert('Now you can log in');
                 return res.data[0];
             })
             .catch(error => {
-                console.error(error);
-            })
+                if (error.response.status === 409) {
+                    alert('Username is already registered');
+                } else {
+                    alert('Something is wrong');
+                }
+            });
     };
 }

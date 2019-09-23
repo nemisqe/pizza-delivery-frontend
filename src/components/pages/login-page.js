@@ -25,9 +25,7 @@ class LoginPage extends Component {
 
     render() {
 
-        const { isAuthenticated } = this.props;
-
-        if (isAuthenticated) {
+        if (window.localStorage.getItem('clientName')) {
             return <Redirect to='/' />
         }
 
@@ -61,7 +59,6 @@ class LoginPage extends Component {
 }
 
 const mapStateToProps = ({ clientName, isAuthenticated }) => {
-    console.log({clientName, isAuthenticated});
     return { clientName, isAuthenticated };
 };
 

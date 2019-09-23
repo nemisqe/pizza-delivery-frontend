@@ -5,7 +5,8 @@ const initialState = {
     loading: true,
     error: null,
     cartItems: [],
-    orderTotal: null
+    orderTotal: null,
+    currentUser: null
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -32,11 +33,26 @@ const updateCartItems = (cartItems, item, idx) => {
     ];
 };
 
+const checkAuth = (state) => {
+    const item = window.localStorage.getItem('clientName');
+    if (item) {
+        return {
+            ...state,
+            clientName: item,
+            isAuthenticated: true
+        }
+    }
+
+    return state;
+};
+
 const updateOrder = (state, pizzaId, quantity) => {
     const { cartItems, pizzaMenu } = state;
+
     const pizza = pizzaMenu.find(({id}) => id === pizzaId);
 
     const itemIndex = cartItems.findIndex(({id}) => id === pizzaId);
+
     const item = cartItems[itemIndex];
 
     const newItem = updateCartItem(pizza, item, quantity);
@@ -62,19 +78,6 @@ const updateCartItem = (pizza, item = {}, quantity) => {
     };
 };
 
-const checkAuth = (state) => {
-    const login = localStorage.getItem('clientName');
-    if (login) {
-        return {
-            ...state,
-            clientName: login,
-            isAuthenticated: true
-        };
-    }
-
-    return state;
-};
-
 const pizzaMenuReducer = (state = initialState, action) => {
 
     switch (action.type) {
@@ -96,6 +99,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload
             };
+
         case 'PIZZA_ADDED_TO_CART':
             return updateOrder(state, action.payload, 1);
 
@@ -115,8 +119,9 @@ const pizzaMenuReducer = (state = initialState, action) => {
             };
 
         case 'POST_LOGIN_SUCCESS':
-            window.alert('Теперь вы можете сделать заказ');
+            window.alert('Now you can make an order');
             localStorage.setItem('clientName', action.payload[0]);
+            console.log(localStorage);
             return {
                 ...state,
                 clientName: action.payload[0],
@@ -124,15 +129,21 @@ const pizzaMenuReducer = (state = initialState, action) => {
             };
 
         case 'USER_LOGOUT':
-
+            window.localStorage.removeItem('clientName');
             return {
                 ...state,
                 clientName: '',
                 isAuthenticated: false
             };
 
-        case 'CHECK_AUTHENTICATION_FROM_LOCAL_STORAGE':
+        case 'CHECK_USER_FOR_AUTH':
             return checkAuth(state);
+
+        case 'USER_REGISTRATION_SUCCESS':
+            return {
+                ...state,
+                clientName: action.payload[0]
+            };
 
         case 'FETCH_USER_DATA_FAILURE':
             return {

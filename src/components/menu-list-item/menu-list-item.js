@@ -19,6 +19,4 @@ const MenuListItem = ({ pizza, onAddedToCart }) => {
     );
 };
 
-//120x120
-
 export default MenuListItem;
