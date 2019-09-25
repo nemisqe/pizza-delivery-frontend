@@ -9,20 +9,18 @@ export default class PizzaService {
             .then(res => res.data);
     };
 
-    getUsers = async () => {
-        return await axios.get(`${this._basicUrl}clients/`)
-            .then(res => res.data);
-    };
-
     loginUser = async (username, password) => {
         return await axios.post(`${this._basicUrl}authentication/`, {
             "clientName": username,
             "password": password
         })
             .then(res => {
+                alert('Success!');
+                console.log(res.data);
                 return res.data[0];
             })
             .catch(error => {
+                alert('Incorrect username');
                 console.error(error);
             });
     };
@@ -43,5 +41,18 @@ export default class PizzaService {
                     alert('Something is wrong');
                 }
             });
+    };
+
+    makeOrder = async (clientId, isReady, cooking_time) => {
+        return await axios.post(`${this._basicUrl}menu/add/`, {
+            "clientId": clientId,
+            "isReady": isReady,
+            "cooking_time": cooking_time
+        })
+            .then(res => {
+                alert('You made an order! Please wait');
+                return res.data;
+            })
+            .catch(error => console.error(error))
     };
 }

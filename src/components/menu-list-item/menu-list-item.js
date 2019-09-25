@@ -1,7 +1,8 @@
 import React from 'react';
 import './menu-list-item.css';
+import { connect } from 'react-redux';
 
-const MenuListItem = ({ pizza, onAddedToCart }) => {
+const MenuListItem = ({ pizza, onAddedToCart, cartItems }) => {
     const { pizza_name, cooking_time, pizza_pictures } = pizza;
     return(
         <div className="pizza-list-item">
@@ -12,11 +13,18 @@ const MenuListItem = ({ pizza, onAddedToCart }) => {
                 <a href="#" className="pizza-name">{ pizza_name }</a>
                 <div className="pizza-cooking-time">{ cooking_time } seconds</div>
                 <button
-                    onClick={onAddedToCart}
+                    onClick={() => {
+                        console.log(cartItems);
+                        onAddedToCart()
+                    }}
                     className="btn btn-info add-to-cart">Add to cart</button>
             </div>
         </div>
     );
 };
 
-export default MenuListItem;
+const mapStateToProps = ({ cartItems }) => {
+    return { cartItems };
+};
+
+export default connect(mapStateToProps)(MenuListItem);

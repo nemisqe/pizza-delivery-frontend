@@ -1,12 +1,14 @@
 const initialState = {
     pizzaMenu: [],
     clientName: '',
+    clientId: null,
     isAuthenticated: false,
     loading: true,
     error: null,
     cartItems: [],
     orderTotal: null,
-    currentUser: null
+    currentUser: null,
+    currentOrder: []
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -125,6 +127,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientName: action.payload[0],
+                clientId: action.payload[2],
                 isAuthenticated: true
             };
 
@@ -133,6 +136,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientName: '',
+                clientId: null,
                 isAuthenticated: false
             };
 
@@ -143,6 +147,12 @@ const pizzaMenuReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientName: action.payload[0]
+            };
+
+        case 'MAKE_ORDER_SUCCESS':
+            return {
+                ...state,
+                currentOrder: action.payload
             };
 
         case 'FETCH_USER_DATA_FAILURE':

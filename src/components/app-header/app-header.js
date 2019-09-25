@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { userLogout, checkAuth } from "../../actions/user-actions";
+import './app-header.css';
 
 const LogoutLink = ({ userLogout }) => {
     return(
@@ -44,6 +45,15 @@ const CartLink = () => {
     );
 };
 
+const WelcomeTitle = ({ clientName }) => {
+
+    return(
+        <li className="nav-item welcome-title" key='cart-link'>
+            <span className="badge badge-primary">Welcome back, { clientName }!</span>
+        </li>
+    );
+};
+
 class AppHeader extends Component {
 
     componentDidMount() {
@@ -53,11 +63,12 @@ class AppHeader extends Component {
 
     render() {
 
-        const { isAuthenticated, userLogout } = this.props;
-
+        const { isAuthenticated, userLogout, clientName } = this.props;
+        console.log(window.localStorage.getItem('clientName'));
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">Pizza-Delivery</Link>
+                { isAuthenticated ? <WelcomeTitle clientName={clientName}/> : null }
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 </button>

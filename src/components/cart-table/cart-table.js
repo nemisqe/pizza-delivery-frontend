@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './cart-table.css';
 import { connect } from 'react-redux';
 import { pizzaAddedTocart, pizzaRemovedFromCart, allPizzasRemovedFromCart } from "../../actions/pizza-menu-actions";
+import {fetchMakeOrderData} from "../../actions/user-actions";
+import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
+import compose from "../../utils";
 
-const CartTable = ({ items, totalCookingTime, onIncrease, onDecrease, onDelete }) => {
-    const renderRow = (item, idx) => {
+class CartTable extends Component {
+
+    renderRow = (item, idx) => {
         const { id, name, count, totalCookingTime } = item;
-            //wtf?? idx
+        const { onIncrease, onDecrease, onDelete } = this.props;
             return(
                 <tr key={id}>
                     <td>{idx + 1}</td>
@@ -33,11 +37,20 @@ const CartTable = ({ items, totalCookingTime, onIncrease, onDecrease, onDelete }
                 </tr>
         );
     };
-    return (
-        <div className="shopping-cart-table">
-            <h2>Your Order</h2>
-            <table className="table">
-                <thead>
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { fetchMakeOrderData, clientId } = this.props;
+        fetchMakeOrderData(clientId, 20, 30);
+    };
+
+    render() {
+        const { items, totalCookingTime } = this.props;
+        return (
+            <div className="shopping-cart-table">
+                <h2>Your Order</h2>
+                <table className="table">
+                    <thead>
                     <tr>
                         <th>#</th>
                         <th>Pizza</th>
@@ -45,32 +58,41 @@ const CartTable = ({ items, totalCookingTime, onIncrease, onDecrease, onDelete }
                         <th>Cooking time</th>
                         <th>Action</th>
                     </tr>
-                </thead>
-                <tbody>
-                {
-                    items.map(renderRow)
-                }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {
+                        items.map(this.renderRow)
+                    }
+                    </tbody>
+                </table>
 
-            <div className="total">
-                Total waiting time: {totalCookingTime} sec
+                <div className="total">
+                    <button className="order-button" onClick={this.handleSubmit}>Make order</button>
+                    Total waiting time: {totalCookingTime} sec
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
+}
 
-const mapStateToProps = ({ cartItems, orderTotal }) => {
+const mapStateToProps = ({ cartItems, orderTotal, clientId }) => {
     return {
         items: cartItems,
+        clientId,
         totalCookingTime: orderTotal
     };
 };
 
-const mapDispatchToProps = {
-    onIncrease: pizzaAddedTocart,
-    onDecrease: pizzaRemovedFromCart,
-    onDelete: allPizzasRemovedFromCart
+const mapDispatchToProps = (dispatch, { pizzaService }) => {
+    return {
+        fetchMakeOrderData: fetchMakeOrderData(pizzaService, dispatch),
+        onIncrease: (id) => dispatch(pizzaAddedTocart(id)),
+        onDecrease: (id) => dispatch(pizzaRemovedFromCart(id)),
+        onDelete: (id) => dispatch(allPizzasRemovedFromCart(id))
+    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartTable);
+export default compose(
+    withPizzaDeliveryService(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(CartTable);

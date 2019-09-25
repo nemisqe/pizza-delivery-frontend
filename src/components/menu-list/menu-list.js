@@ -32,7 +32,7 @@ class MenuListContainer extends Component {
 
     render() {
         const { pizzaMenu, loading, error, onAddedToCart } = this.props;
-        
+
         if (loading) {
             return <Spinner/>;
         }
@@ -41,7 +41,8 @@ class MenuListContainer extends Component {
             return <ErrorIndicator/>;
         }
 
-        return <MenuList pizzaMenu={pizzaMenu} onAddedToCart={onAddedToCart} />
+        return <MenuList pizzaMenu={pizzaMenu} onAddedToCart={onAddedToCart}/>
+
     };
 }
 
