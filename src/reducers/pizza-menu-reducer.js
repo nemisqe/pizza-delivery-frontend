@@ -6,7 +6,7 @@ const initialState = {
     loading: true,
     error: null,
     cartItems: [],
-    orderTotal: null,
+    orderTotal: 0,
     currentUser: null,
     currentOrder: []
 };
@@ -35,6 +35,8 @@ const updateCartItems = (cartItems, item, idx) => {
     ];
 };
 
+const updateTotalCookingTime = (pizza, orderTotal, quantity) => orderTotal + quantity * pizza.cooking_time;
+
 const checkAuth = (state) => {
     const item = window.localStorage.getItem('clientName');
     if (item) {
@@ -49,7 +51,7 @@ const checkAuth = (state) => {
 };
 
 const updateOrder = (state, pizzaId, quantity) => {
-    const { cartItems, pizzaMenu } = state;
+    const { cartItems, pizzaMenu, orderTotal } = state;
 
     const pizza = pizzaMenu.find(({id}) => id === pizzaId);
 
@@ -61,7 +63,8 @@ const updateOrder = (state, pizzaId, quantity) => {
 
     return {
         ...state,
-        cartItems: updateCartItems(cartItems, newItem, itemIndex)
+        cartItems: updateCartItems(cartItems, newItem, itemIndex),
+        orderTotal: updateTotalCookingTime(pizza, orderTotal, quantity)
     };
 };
 
@@ -123,7 +126,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
         case 'POST_LOGIN_SUCCESS':
             window.alert('Now you can make an order');
             localStorage.setItem('clientName', action.payload[0]);
-            console.log(localStorage);
+            console.log(window.localStorage);
             return {
                 ...state,
                 clientName: action.payload[0],

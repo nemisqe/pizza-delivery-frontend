@@ -32,7 +32,7 @@ const LoginRegistrationLink = () => {
     );
 };
 
-const CartLink = () => {
+const HistoryLink = () => {
 
     if (!window.localStorage.getItem('clientName')) {
         return null;
@@ -40,7 +40,7 @@ const CartLink = () => {
 
     return(
         <li className="nav-item " key='cart-link'>
-            <Link className="nav-link" to='/cart'>Cart</Link>
+            <Link className="nav-link" to='/cart'>History</Link>
         </li>
     );
 };
@@ -78,7 +78,7 @@ class AppHeader extends Component {
                             <Link className="nav-link" to='/'>Home</Link>
                         </li>
                         { isAuthenticated ? <LogoutLink userLogout={userLogout}/> : <LoginRegistrationLink/> }
-                        { isAuthenticated ? <CartLink/> : null }
+                        { isAuthenticated ? <HistoryLink/> : null }
                     </ul>
                 </div>
             </nav>

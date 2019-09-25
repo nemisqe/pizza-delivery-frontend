@@ -40,8 +40,9 @@ class CartTable extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const { fetchMakeOrderData, clientId } = this.props;
-        fetchMakeOrderData(clientId, 20, 30);
+        const { fetchMakeOrderData, clientName, orderTotal } = this.props;
+
+        fetchMakeOrderData(clientName, 20, orderTotal);
     };
 
     render() {
@@ -68,17 +69,18 @@ class CartTable extends Component {
 
                 <div className="total">
                     <button className="order-button" onClick={this.handleSubmit}>Make order</button>
-                    Total waiting time: {totalCookingTime} sec
+                    Total waiting time: {this.props.orderTotal} sec
                 </div>
             </div>
         );
     };
 }
 
-const mapStateToProps = ({ cartItems, orderTotal, clientId }) => {
+const mapStateToProps = ({ cartItems, orderTotal, clientName }) => {
     return {
         items: cartItems,
-        clientId,
+        clientName,
+        orderTotal,
         totalCookingTime: orderTotal
     };
 };

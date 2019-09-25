@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import AppHeader from "../app-header/app-header";
-import { CartPage, HomePage } from '../pages';
+import { HistoryPage, HomePage } from '../pages';
 import LoginPage from '../../components/pages/login-page';
 import RegistrationPage from '../../components/pages/registration-page';
 import { connect } from 'react-redux';
@@ -25,7 +25,7 @@ const App = ({ isAuthenticated }) => {
                         ) : (
                             <Redirect to="/login" />)
                     )} />
-                <Route path='/cart' excact component={ CartPage } />
+                <Route path='/cart' excact component={ HistoryPage } />
                 <Route path='/registration' exact component={ RegistrationPage } />
                 <Route path='/login' exact render={() => (<LoginPage/>)} />
                 <Route path='/logout' exact render={() => (isAuthenticated ? (

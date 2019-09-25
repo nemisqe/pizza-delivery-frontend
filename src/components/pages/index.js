@@ -1,7 +1,7 @@
 import { HomePage } from './home-page';
-import { CartPage } from './cart-page';
+import { HistoryPage } from './history-page';
 
 export {
     HomePage,
-    CartPage
+    HistoryPage
 };

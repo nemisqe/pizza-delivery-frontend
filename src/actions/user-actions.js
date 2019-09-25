@@ -1,5 +1,3 @@
-import {pizzaAddedTocart} from "./pizza-menu-actions";
-
 const correctLogin = (...args) => ({
     type: 'POST_LOGIN_SUCCESS',
     payload: args
@@ -42,11 +40,11 @@ const fetchRegistrationUserData = (pizzaService, dispatch) => (clientName, passw
         });
 };
 
-const fetchMakeOrderData = (pizzaService, dispatch) => (clientId, isReady, cooking_time) => {
-    pizzaService.makeOrder(clientId, isReady, cooking_time)
+const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, isReady, cooking_time) => {
+    pizzaService.makeOrder(clientName, isReady, cooking_time)
         .then(e => {
             console.log(e);
-            console.log(clientId, isReady, cooking_time);
+            console.log(clientName, isReady, cooking_time);
             dispatch(makeOrderSuccess(e))
         })
         .catch(error => console.error(error));
