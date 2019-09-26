@@ -25,7 +25,7 @@ const App = ({ isAuthenticated }) => {
                         ) : (
                             <Redirect to="/login" />)
                     )} />
-                <Route path='/cart' excact component={ HistoryPage } />
+                <Route path='/history' excact component={ HistoryPage } />
                 <Route path='/registration' exact component={ RegistrationPage } />
                 <Route path='/login' exact render={() => (<LoginPage/>)} />
                 <Route path='/logout' exact render={() => (isAuthenticated ? (

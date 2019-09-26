@@ -40,11 +40,11 @@ const fetchRegistrationUserData = (pizzaService, dispatch) => (clientName, passw
         });
 };
 
-const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, isReady, cooking_time) => {
-    pizzaService.makeOrder(clientName, isReady, cooking_time)
+const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, cooking_time) => {
+    pizzaService.makeOrder(clientName, cooking_time)
         .then(e => {
             console.log(e);
-            console.log(clientName, isReady, cooking_time);
+            console.log(clientName, cooking_time);
             dispatch(makeOrderSuccess(e))
         })
         .catch(error => console.error(error));

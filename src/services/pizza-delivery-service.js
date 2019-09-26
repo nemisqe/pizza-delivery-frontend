@@ -1,8 +1,9 @@
 import axios from 'axios';
+import socketIOClient from "socket.io-client";
 
 export default class PizzaService {
-
     _basicUrl = 'http://localhost:3001/';
+    socket = this._basicUrl;
 
     getAllPizzas = async () => {
         return await axios.get(`${this._basicUrl}menu/`)
@@ -43,14 +44,17 @@ export default class PizzaService {
             });
     };
 
-    makeOrder = async (clientName, isReady, cooking_time) => {
+    makeOrder = async (clientName, cooking_time) => {
         return await axios.post(`${this._basicUrl}menu/add/`, {
             "clientName": clientName,
-            "isReady": isReady,
             "cooking_time": cooking_time
         })
             .then(res => {
-                alert('You made an order! Please wait');
+                if (res.data.cooking_time === 0) {
+                    alert('Your cart is empty');
+                    return;
+                }
+
                 return res.data;
             })
             .catch(error => console.error(error))

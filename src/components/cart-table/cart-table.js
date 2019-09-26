@@ -41,12 +41,21 @@ class CartTable extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { fetchMakeOrderData, clientName, orderTotal } = this.props;
+        if (orderTotal === 0) {
+            alert('Your cart is empty. Add some pizza');
+            return;
+        }
 
-        fetchMakeOrderData(clientName, 20, orderTotal);
+        alert('Your order is in progress!');
+        fetchMakeOrderData(clientName, orderTotal);
+
+        setTimeout(() => {
+            alert('Your order is ready!');
+        }, orderTotal * 1000);
     };
 
     render() {
-        const { items, totalCookingTime } = this.props;
+        const { items } = this.props;
         return (
             <div className="shopping-cart-table">
                 <h2>Your Order</h2>

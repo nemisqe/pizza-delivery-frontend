@@ -40,7 +40,7 @@ const HistoryLink = () => {
 
     return(
         <li className="nav-item " key='cart-link'>
-            <Link className="nav-link" to='/cart'>History</Link>
+            <Link className="nav-link" to='/history'>History</Link>
         </li>
     );
 };

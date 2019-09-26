@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PIZZA DELIVERY APP
+
+////////////////
+
+FEATURES FOR REFACTOR
+
+    - modal windows instead alerts
+    - propTypes
+    - thunk
+    - socket.io for isReady func real-time changing
+
+////////////////
 
 ## Available Scripts
 
