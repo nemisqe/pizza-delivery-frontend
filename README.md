@@ -7,6 +7,7 @@ FEATURES FOR REFACTOR
     - modal windows instead alerts
     - propTypes
     - thunk
+    - order history
     - socket.io for isReady func real-time changing
 
 ////////////////

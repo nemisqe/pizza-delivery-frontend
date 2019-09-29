@@ -1,9 +1,7 @@
 import axios from 'axios';
-import socketIOClient from "socket.io-client";
 
 export default class PizzaService {
     _basicUrl = 'http://localhost:3001/';
-    socket = this._basicUrl;
 
     getAllPizzas = async () => {
         return await axios.get(`${this._basicUrl}menu/`)
@@ -18,6 +16,7 @@ export default class PizzaService {
             .then(res => {
                 alert('Success!');
                 console.log(res.data);
+
                 return res.data[0];
             })
             .catch(error => {
@@ -58,5 +57,11 @@ export default class PizzaService {
                 return res.data;
             })
             .catch(error => console.error(error))
+    };
+
+    getUserOrderHistory = async (clientName) => {
+        return await axios.get(`${this._basicUrl}history/${clientName}/`)
+            .then(res => res.data)
+            .catch(error => console.error(error));
     };
 }

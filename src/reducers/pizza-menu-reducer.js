@@ -8,7 +8,8 @@ const initialState = {
     cartItems: [],
     orderTotal: 0,
     currentUser: null,
-    currentOrder: []
+    currentOrder: [],
+    currentUserOrderHistory: []
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -105,6 +106,12 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 error: action.payload
             };
 
+        case 'GET_USER_ORDER_HISTORY':
+            return {
+                ...state,
+                currentUserOrderHistory: action.payload
+            };
+
         case 'PIZZA_ADDED_TO_CART':
             return updateOrder(state, action.payload, 1);
 
@@ -164,6 +171,12 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 userData: [],
                 loading: false,
                 error: action.payload
+            };
+
+        case 'USER_HISTORY_REQUESTED':
+            return {
+                ...state,
+                loading: true
             };
 
         default:

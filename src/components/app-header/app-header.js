@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import { connect } from 'react-redux';
 import { userLogout, checkAuth } from "../../actions/user-actions";
 import './app-header.css';
@@ -20,6 +20,10 @@ const LogoutLink = ({ userLogout }) => {
 };
 
 const LoginRegistrationLink = () => {
+    if (window.localStorage.getItem('clientName')) {
+        return <Redirect to='/' />
+    }
+
     return(
         <React.Fragment>
             <li className="nav-item" key='registration-link'>
@@ -64,7 +68,7 @@ class AppHeader extends Component {
     render() {
 
         const { isAuthenticated, userLogout, clientName } = this.props;
-        console.log(window.localStorage.getItem('clientName'));
+        console.log(clientName);
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">Pizza-Delivery</Link>

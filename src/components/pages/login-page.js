@@ -5,6 +5,7 @@ import compose from '../../utils';
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import { fetchLoginUserData } from '../../actions/user-actions';
 import {Redirect} from "react-router-dom";
+import Spinner from "../spinner/spinner";
 
 class LoginPage extends Component {
 
@@ -29,6 +30,10 @@ class LoginPage extends Component {
             return <Redirect to='/' />
         }
 
+        if (this.props.loading) {
+            return <Spinner/>
+        }
+
         return (
             <form className="reg-page__form">
                 <h3>Login below</h3>
@@ -44,7 +49,7 @@ class LoginPage extends Component {
                 </label>
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR PASSWORD</p>
-                    <input type="text"
+                    <input type="password"
                            className="input"
                            value={this.state.password}
                            onChange={(e) => this.setState({ password: e.target.value })}/>
@@ -58,8 +63,8 @@ class LoginPage extends Component {
     };
 }
 
-const mapStateToProps = ({ clientName, isAuthenticated }) => {
-    return { clientName, isAuthenticated };
+const mapStateToProps = ({ clientName, isAuthenticated, loading }) => {
+    return { clientName, isAuthenticated, loading };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {

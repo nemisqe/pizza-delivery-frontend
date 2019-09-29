@@ -1,9 +1,8 @@
 import React from 'react';
+import HistoryList from '../history-list/history-list';
 
 const HistoryPage = () => {
-    return(
-        <div>History page</div>
-    );
+    return <HistoryList/>
 };
 
-export { HistoryPage };
+export default HistoryPage;

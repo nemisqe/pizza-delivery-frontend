@@ -25,6 +25,15 @@ const makeOrderSuccess = (...args) => ({
     payload: args
 });
 
+const userHistoryRequested = () => ({
+    type: 'USER_HISTORY_REQUESTED'
+});
+
+const getUserHistory = (userOrderHistory) => ({
+    type: 'GET_USER_ORDER_HISTORY',
+    payload: userOrderHistory
+});
+
 const fetchLoginUserData = (pizzaService, dispatch) => (clientName, password) => {
     pizzaService.loginUser(clientName, password)
         .then(e => dispatch(correctLogin(e.clientName, e.password, e.id)))
@@ -50,10 +59,18 @@ const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, cooking_time
         .catch(error => console.error(error));
 };
 
+const fetchUserOrderHistory = (pizzaService, dispatch) => (clientName) => {
+    userHistoryRequested();
+    pizzaService.getUserOrderHistory(clientName)
+        .then(e => dispatch(getUserHistory(e)))
+        .catch(error => console.error(error))
+};
+
 export {
     fetchLoginUserData,
     fetchRegistrationUserData,
     fetchMakeOrderData,
+    fetchUserOrderHistory,
     userLogout
 };
 
