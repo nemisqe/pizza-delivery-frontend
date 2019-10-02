@@ -138,6 +138,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 ...state,
                 clientName: action.payload[0],
                 clientId: action.payload[2],
+                loading: false,
                 isAuthenticated: true
             };
 
@@ -157,6 +158,12 @@ const pizzaMenuReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientName: action.payload[0]
+            };
+
+        case 'LOGIN_DATA_REQUESTED':
+            return {
+                ...state,
+                loading: true
             };
 
         case 'MAKE_ORDER_SUCCESS':

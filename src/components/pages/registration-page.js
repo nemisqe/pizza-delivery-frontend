@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import compose from "../../utils";
 import {Redirect} from "react-router-dom";
+import Dialog from 'react-bootstrap-dialog';
 
 class RegistrationPage extends Component {
 
@@ -17,7 +18,14 @@ class RegistrationPage extends Component {
         e.preventDefault();
         if (this.state.clientName === '' || this.state.password === '') {
             e.preventDefault();
-            alert('Fill in username and password');
+            return this.dialog.show({
+                title: 'Empty fields',
+                body: 'Enter nickname and password',
+                bsSize: 'large',
+                actions: [
+                    Dialog.OKAction()
+                ]
+            })
         } else {
             this.props.fetchRegistrationUserData(this.state.clientName, this.state.password);
         }
@@ -53,6 +61,7 @@ class RegistrationPage extends Component {
                         </div>
                 </label>
                 <button type="submit" onClick={this.handleSubmit} className="reg-page__button">submit</button>
+                <Dialog ref={(component) => { this.dialog = component }} />
             </form>
         );
     };

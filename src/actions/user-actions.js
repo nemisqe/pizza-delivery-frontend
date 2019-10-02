@@ -3,6 +3,10 @@ const correctLogin = (...args) => ({
     payload: args
 });
 
+const loginDataRequested = () => ({
+    type: 'FETCH_LOGIN_DATA'
+});
+
 const userError = (error) => ({
     type: 'FETCH_USER_DATA_FAILURE',
     payload: error
@@ -35,6 +39,7 @@ const getUserHistory = (userOrderHistory) => ({
 });
 
 const fetchLoginUserData = (pizzaService, dispatch) => (clientName, password) => {
+    loginDataRequested();
     pizzaService.loginUser(clientName, password)
         .then(e => dispatch(correctLogin(e.clientName, e.password, e.id)))
         .catch(err => dispatch(userError(err)));
@@ -49,11 +54,9 @@ const fetchRegistrationUserData = (pizzaService, dispatch) => (clientName, passw
         });
 };
 
-const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, cooking_time) => {
-    pizzaService.makeOrder(clientName, cooking_time)
+const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, isReady, cooking_time) => {
+    pizzaService.makeOrder(clientName, isReady, cooking_time)
         .then(e => {
-            console.log(e);
-            console.log(clientName, cooking_time);
             dispatch(makeOrderSuccess(e))
         })
         .catch(error => console.error(error));

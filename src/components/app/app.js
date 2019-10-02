@@ -11,8 +11,9 @@ import { connect } from 'react-redux';
 const App = ({ isAuthenticated }) => {
 
     return (
+        <React.Fragment>
+        <AppHeader/>
         <main role="main" className="container">
-            <AppHeader/>
             <Switch>
                 <Route
                     path='/'
@@ -47,6 +48,7 @@ const App = ({ isAuthenticated }) => {
                 )} />
             </Switch>
         </main>
+        </React.Fragment>
     );
 };
 

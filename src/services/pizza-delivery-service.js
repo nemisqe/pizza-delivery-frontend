@@ -43,9 +43,10 @@ export default class PizzaService {
             });
     };
 
-    makeOrder = async (clientName, cooking_time) => {
+    makeOrder = async (clientName, isReady, cooking_time) => {
         return await axios.post(`${this._basicUrl}menu/add/`, {
             "clientName": clientName,
+            "isReady": isReady,
             "cooking_time": cooking_time
         })
             .then(res => {

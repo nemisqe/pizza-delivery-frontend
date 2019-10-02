@@ -5,6 +5,7 @@ import { pizzaAddedTocart, pizzaRemovedFromCart, allPizzasRemovedFromCart } from
 import {fetchMakeOrderData} from "../../actions/user-actions";
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import compose from "../../utils";
+import Dialog from 'react-bootstrap-dialog';
 
 class CartTable extends Component {
 
@@ -41,13 +42,21 @@ class CartTable extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { fetchMakeOrderData, clientName, orderTotal } = this.props;
+
         if (orderTotal === 0) {
-            alert('Your cart is empty. Add some pizza');
-            return;
+
+            return this.dialog.show({
+                title: 'Empty cart',
+                body: 'Your cart is empty. Please add some pizza',
+                bsSize: 'large',
+                actions: [
+                    Dialog.OKAction()
+                ]
+            })
         }
 
         alert('Your order is in progress!');
-        fetchMakeOrderData(clientName, orderTotal);
+        fetchMakeOrderData(clientName, 'currently cooking', orderTotal);
 
         setTimeout(() => {
             alert('Your order is ready!');
@@ -55,6 +64,10 @@ class CartTable extends Component {
     };
 
     render() {
+        Dialog.setOptions({
+            defaultOkLabel: 'Go to page'
+        });
+
         const { items } = this.props;
         return (
             <div className="shopping-cart-table">
@@ -80,6 +93,7 @@ class CartTable extends Component {
                     <button className="order-button" onClick={this.handleSubmit}>Make order</button>
                     Total waiting time: {this.props.orderTotal} sec
                 </div>
+                <Dialog ref={(component) => { this.dialog = component }} />
             </div>
         );
     };
