@@ -5,7 +5,6 @@ import compose from '../../utils';
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import { fetchLoginUserData } from '../../actions/user-actions';
 import {Redirect} from "react-router-dom";
-import Spinner from "../spinner/spinner";
 import Dialog from 'react-bootstrap-dialog';
 
 class LoginPage extends Component {

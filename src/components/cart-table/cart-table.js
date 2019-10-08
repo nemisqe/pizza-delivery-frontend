@@ -55,11 +55,23 @@ class CartTable extends Component {
             })
         }
 
-        alert('Your order is in progress!');
+        this.dialog.show({
+            title: 'Success',
+            body: 'Your order is currently cooking',
+            actions: [
+                Dialog.OKAction()
+            ]
+        });
         fetchMakeOrderData(clientName, 'currently cooking', orderTotal);
 
         setTimeout(() => {
-            alert('Your order is ready!');
+            this.dialog.show({
+                title: 'Done!',
+                body: 'Your order is ready!',
+                actions: [
+                    Dialog.OKAction()
+                ]
+            })
         }, orderTotal * 1000);
     };
 
