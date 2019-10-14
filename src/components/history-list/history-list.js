@@ -5,13 +5,14 @@ import { fetchUserOrderHistory } from "../../actions/user-actions";
 import { connect } from 'react-redux';
 import HistoryPageListItem from '../history-list/history-page-list-item';
 import Spinner from "../spinner";
+import PropTypes from 'prop-types';
 
 class HistoryList extends Component {
 
     componentDidMount() {
         const { fetchUserOrderHistory, clientName } = this.props;
         fetchUserOrderHistory(clientName);
-    };
+    }
 
     render() {
         const { currentUserOrderHistory, loading } = this.props;
@@ -34,9 +35,18 @@ class HistoryList extends Component {
             </ul>
         )
     }
+
+    static get propTypes() {
+        return {
+            fetchUserOrderHistory: PropTypes.func.isRequired,
+            currentUserOrderHistory: PropTypes.array,
+            loading: PropTypes.bool,
+            clientName: PropTypes.string
+        };
+    }
 }
 
-const mapStateToProps = ({ clientName, currentUserOrderHistory, loading }) => {
+const mapStateToProps = ({ loading , currentUserOrderHistory, clientName, }) => {
     return { clientName, currentUserOrderHistory, loading };
 };
 

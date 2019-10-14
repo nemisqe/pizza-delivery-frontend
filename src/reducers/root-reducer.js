@@ -4,12 +4,14 @@ const initialState = {
     clientId: null,
     isAuthenticated: false,
     loading: true,
-    error: null,
+    userErrors: [],
     cartItems: [],
     orderTotal: 0,
+    menuErrors: [],
     currentUser: null,
     currentOrder: [],
-    currentUserOrderHistory: []
+    currentUserOrderHistory: [],
+    signUpSuccess: false
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -20,7 +22,7 @@ const updateCartItems = (cartItems, item, idx) => {
             item
         ];
     }
-    
+
     if (item.count === 0) {
         return [
             ...cartItems.slice(0, idx),
@@ -72,9 +74,9 @@ const updateOrder = (state, pizzaId, quantity) => {
 const updateCartItem = (pizza, item = {}, quantity) => {
 
     const { id = pizza.id,
-            count = 0,
-            name = pizza.pizza_name,
-            totalCookingTime = 0 } = item;
+        count = 0,
+        name = pizza.pizza_name,
+        totalCookingTime = 0 } = item;
 
     return {
         id,
@@ -103,7 +105,7 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 ...state,
                 pizzaMenu: [],
                 loading: false,
-                error: action.payload
+                menuErrors: action.payload
             };
 
         case 'GET_USER_ORDER_HISTORY':
@@ -131,9 +133,9 @@ const pizzaMenuReducer = (state = initialState, action) => {
             };
 
         case 'POST_LOGIN_SUCCESS':
-            window.alert('Now you can make an order');
             localStorage.setItem('clientName', action.payload[0]);
-            console.log(window.localStorage);
+            localStorage.setItem('token', action.payload[1]);
+            console.log(localStorage.getItem('token'));
             return {
                 ...state,
                 clientName: action.payload[0],
@@ -157,7 +159,8 @@ const pizzaMenuReducer = (state = initialState, action) => {
         case 'USER_REGISTRATION_SUCCESS':
             return {
                 ...state,
-                clientName: action.payload[0]
+                clientName: action.payload[0],
+                signUpSuccess: true
             };
 
         case 'LOGIN_DATA_REQUESTED':
@@ -177,13 +180,27 @@ const pizzaMenuReducer = (state = initialState, action) => {
                 ...state,
                 userData: [],
                 loading: false,
-                error: action.payload
+                userErrors: action.payload
             };
 
         case 'USER_HISTORY_REQUESTED':
             return {
                 ...state,
                 loading: true
+            };
+
+        case 'USER_ALREADY_REGISTERED':
+            return {
+                ...state,
+                userErrors: action.payload,
+                signUpSuccess: false
+            };
+
+        case '409_STATUS_CODE':
+            return {
+                ...state,
+                userErrors: action.payload,
+                signUpSuccess: false
             };
 
         default:

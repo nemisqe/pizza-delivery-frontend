@@ -10,6 +10,11 @@
 
 }
 
+.pizza-name {
+    font-weight: bold;
+    color: #3bc0ff;
+}
+
 .pizza-list-item .pizza-cover img {
     max-width: 100%;
 }

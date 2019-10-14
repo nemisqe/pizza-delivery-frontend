@@ -18,14 +18,14 @@ const menuError = (error) => {
     }
 };
 
-const fetchMenu = (pizzaService, dispatch) => () => {
+const fetchMenu = (pizzaService) => () => (dispatch) => {
     dispatch(menuRequested());
     pizzaService.getAllPizzas()
         .then(data => dispatch(pizzaMenuLoaded(data)))
         .catch(error => dispatch(menuError(error)));
 };
 
-export const pizzaAddedTocart = (pizzaId) => {
+export const pizzaAddedToCart = (pizzaId) => {
     return {
         type: 'PIZZA_ADDED_TO_CART',
         payload: pizzaId

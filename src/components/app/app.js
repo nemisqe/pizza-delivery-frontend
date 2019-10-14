@@ -6,10 +6,10 @@ import HistoryPage from '../pages/history-page';
 import LoginPage from '../../components/pages/login-page';
 import RegistrationPage from '../../components/pages/registration-page';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 const App = ({ isAuthenticated }) => {
-
     return (
         <React.Fragment>
         <AppHeader/>
@@ -27,14 +27,6 @@ const App = ({ isAuthenticated }) => {
                         ) : (
                             <Redirect to="/login" />)
                     )} />
-                <Route path='/history' render={() => (isAuthenticated ? (
-                        <Route
-                            path="/history"
-                            component={HistoryPage}
-                        />
-                    ) : (
-                        <Redirect to="/login" />)
-                )} /> />
                 <Route path='/registration' exact component={ RegistrationPage } />
                 <Route path='/login' exact render={() => (<LoginPage/>)} />
                 <Route path='/logout' exact render={() => (isAuthenticated ? (
@@ -46,10 +38,22 @@ const App = ({ isAuthenticated }) => {
                     ) : (
                         <Redirect to="/login" />)
                 )} />
+                <Route path='/history' render={() => (isAuthenticated ? (
+                        <Route
+                            path="/history"
+                            component={HistoryPage}
+                        />
+                    ) : (
+                        <Redirect to="/login" />)
+                )} />
             </Switch>
         </main>
         </React.Fragment>
     );
+};
+
+App.propTypes = {
+    isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = ({ isAuthenticated }) => {

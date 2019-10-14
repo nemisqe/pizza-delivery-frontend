@@ -3,6 +3,7 @@ import {Link, Redirect} from "react-router-dom";
 import { connect } from 'react-redux';
 import { userLogout, checkAuth } from "../../actions/user-actions";
 import './app-header.css';
+import PropTypes from 'prop-types';
 
 const LogoutLink = ({ userLogout }) => {
     return(
@@ -17,6 +18,10 @@ const LogoutLink = ({ userLogout }) => {
             </Link>
         </li>
     );
+};
+
+LogoutLink.propTypes = {
+    userLogout: PropTypes.func
 };
 
 const LoginRegistrationLink = () => {
@@ -58,17 +63,19 @@ const WelcomeTitle = ({ clientName }) => {
     );
 };
 
+WelcomeTitle.propTypes = {
+    clientName: PropTypes.string
+};
+
 class AppHeader extends Component {
 
     componentDidMount() {
         const { checkAuth } = this.props;
         checkAuth();
-    };
+    }
 
     render() {
-
         const { isAuthenticated, userLogout, clientName } = this.props;
-        console.log(clientName);
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">Pizza-Delivery</Link>
@@ -81,16 +88,23 @@ class AppHeader extends Component {
                         <li className="nav-item" key="main-link">
                             <Link className="nav-link" to='/'>Home</Link>
                         </li>
-                        { isAuthenticated ? <LogoutLink userLogout={userLogout}/> : <LoginRegistrationLink/> }
                         { isAuthenticated ? <HistoryLink/> : null }
+                        { isAuthenticated ? <LogoutLink userLogout={userLogout}/> : <LoginRegistrationLink/> }
                     </ul>
                 </div>
             </nav>
         );
-    };
+    }
+
+    static get propTypes() {
+        return {
+            checkAuth: PropTypes.func.isRequired,
+            userLogout: PropTypes.func.isRequired,
+            isAuthenticated: PropTypes.bool,
+            clientName: PropTypes.string
+        };
+    }
 }
-
-
 
 const mapStateToProps = ({ isAuthenticated, clientName }) => {
     return { isAuthenticated, clientName };

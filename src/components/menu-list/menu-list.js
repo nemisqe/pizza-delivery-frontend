@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import MenuListItem from '../menu-list-item';
 import './menu-list.css';
 import { connect } from 'react-redux';
-import {fetchMenu, pizzaAddedTocart} from "../../actions/pizza-menu-actions";
+import {fetchMenu, pizzaAddedToCart} from "../../actions/pizza-menu-actions";
 import withPizzaDeliveryService from '../hoc/with-pizza-delivery-service';
 import compose from '../../utils';
 import Spinner from "../spinner/spinner";
 import ErrorIndicator from "../error-indicator/error-indicator";
+import PropTypes from 'prop-types';
+import { bindActionCreators } from "redux";
 
 const MenuList = ({ pizzaMenu, onAddedToCart }) => {
     return(
@@ -24,37 +26,52 @@ const MenuList = ({ pizzaMenu, onAddedToCart }) => {
     );
 };
 
-class MenuListContainer extends Component {
+MenuList.propTypes = {
+    pizzaMenu: PropTypes.array.isRequired,
+    onAddedToCart: PropTypes.func
+};
 
+class MenuListContainer extends Component {
     componentDidMount() {
         this.props.fetchMenu();
-    };
+    }
 
     render() {
-        const { pizzaMenu, loading, error, onAddedToCart } = this.props;
+
+        const { pizzaMenu, loading, menuErrors, onAddedToCart } = this.props;
 
         if (loading) {
             return <Spinner/>;
         }
 
-        if (error) {
+        if (menuErrors.length !== 0) {
             return <ErrorIndicator/>;
         }
 
         return <MenuList pizzaMenu={pizzaMenu} onAddedToCart={onAddedToCart}/>
 
-    };
+    }
+
+    static get propTypes() {
+        return {
+            pizzaMenu: PropTypes.array,
+            loading: PropTypes.any,
+            userError: PropTypes.array,
+            onAddedToCart: PropTypes.func,
+            fetchMenu: PropTypes.func
+        };
+    }
 }
 
-const mapStateToProps = ({ pizzaMenu, loading, error }) => {
-    return { pizzaMenu, loading, error };
+const mapStateToProps = ({ pizzaMenu, loading, menuErrors }) => {
+    return { pizzaMenu, loading, menuErrors };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {
-    return {
-        fetchMenu: fetchMenu(pizzaService, dispatch),
-        onAddedToCart: (id) => dispatch(pizzaAddedTocart(id))
-    };
+    return bindActionCreators({
+        fetchMenu: fetchMenu(pizzaService),
+        onAddedToCart: pizzaAddedToCart
+    }, dispatch);
 };
 
 export default compose(

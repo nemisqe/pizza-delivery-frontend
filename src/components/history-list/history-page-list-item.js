@@ -1,5 +1,6 @@
 import React from 'react';
 import './history-page-list-item.css';
+import PropTypes from 'prop-types';
 
 const HistoryPageLinkItem = ({ historyData }) => {
     const { clientName, cooking_time, isReady } = historyData;
@@ -10,6 +11,10 @@ const HistoryPageLinkItem = ({ historyData }) => {
             <span className="badge badge-light item-title">Order progress: <span className="badge badge-success item-value">{ `${isReady} ` }</span></span>
         </div>
     );
+};
+
+HistoryPageLinkItem.propTypes = {
+    historyData: PropTypes.object
 };
 
 export default HistoryPageLinkItem;

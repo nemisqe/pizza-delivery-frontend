@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './cart-table.css';
 import { connect } from 'react-redux';
-import { pizzaAddedTocart, pizzaRemovedFromCart, allPizzasRemovedFromCart } from "../../actions/pizza-menu-actions";
+import { pizzaAddedToCart, pizzaRemovedFromCart, allPizzasRemovedFromCart } from "../../actions/pizza-menu-actions";
 import {fetchMakeOrderData} from "../../actions/user-actions";
 import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import compose from "../../utils";
 import Dialog from 'react-bootstrap-dialog';
+import {bindActionCreators} from "redux";
 
 class CartTable extends Component {
 
@@ -65,13 +66,7 @@ class CartTable extends Component {
         fetchMakeOrderData(clientName, 'currently cooking', orderTotal);
 
         setTimeout(() => {
-            this.dialog.show({
-                title: 'Done!',
-                body: 'Your order is ready!',
-                actions: [
-                    Dialog.OKAction()
-                ]
-            })
+            alert('Your order is ready!');
         }, orderTotal * 1000);
     };
 
@@ -121,12 +116,12 @@ const mapStateToProps = ({ cartItems, orderTotal, clientName }) => {
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {
-    return {
-        fetchMakeOrderData: fetchMakeOrderData(pizzaService, dispatch),
-        onIncrease: (id) => dispatch(pizzaAddedTocart(id)),
-        onDecrease: (id) => dispatch(pizzaRemovedFromCart(id)),
-        onDelete: (id) => dispatch(allPizzasRemovedFromCart(id))
-    };
+    return bindActionCreators ({
+        fetchMakeOrderData: fetchMakeOrderData(pizzaService),
+        onIncrease: pizzaAddedToCart,
+        onDecrease: pizzaRemovedFromCart,
+        onDelete: allPizzasRemovedFromCart
+    }, dispatch);
 };
 
 export default compose(

@@ -6,6 +6,8 @@ import withPizzaDeliveryService from "../hoc/with-pizza-delivery-service";
 import { fetchLoginUserData } from '../../actions/user-actions';
 import {Redirect} from "react-router-dom";
 import Dialog from 'react-bootstrap-dialog';
+import {bindActionCreators} from "redux";
+import SignInError from "../sign-in-error";
 
 class LoginPage extends Component {
 
@@ -13,6 +15,12 @@ class LoginPage extends Component {
         clientName: '',
         password: ''
     };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.error !== prevProps) {
+
+        }
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -39,6 +47,7 @@ class LoginPage extends Component {
 
         return (
             <form className="reg-page__form">
+                { this.props.userErrors.length !== 0 ? <SignInError errorBody="Incorrect username or password" errorHeader="Error" /> : null }
                 <h3>Login below</h3>
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR NAME</p>
@@ -67,14 +76,14 @@ class LoginPage extends Component {
     };
 }
 
-const mapStateToProps = ({ clientName, isAuthenticated, loading }) => {
-    return { clientName, isAuthenticated, loading };
+const mapStateToProps = ({ userErrors, clientName, isAuthenticated, loading}) => {
+    return { userErrors, clientName, isAuthenticated, loading };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {
-    return {
-        fetchUserData: fetchLoginUserData(pizzaService, dispatch)
-    };
+    return bindActionCreators({
+        fetchUserData: fetchLoginUserData(pizzaService)
+    }, dispatch);
 };
 
 export default compose(

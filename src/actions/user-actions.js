@@ -16,8 +16,9 @@ const userLogout = () => ({
     type: 'USER_LOGOUT'
 });
 
-const registrationSuccess = () => ({
-    type: 'USER_REGISTRATION_SUCCESS'
+const registrationSuccess = (newUser) => ({
+    type: 'USER_REGISTRATION_SUCCESS',
+    payload: newUser
 });
 
 export const checkAuth = () => ({
@@ -38,35 +39,49 @@ const getUserHistory = (userOrderHistory) => ({
     payload: userOrderHistory
 });
 
-const fetchLoginUserData = (pizzaService, dispatch) => (clientName, password) => {
+const dataExistErr = (err) => ({
+    type: '409_STATUS_CODE',
+    payload: err
+});
+
+const fetchLoginUserData = (pizzaService) => (clientName, password) => dispatch => {
     loginDataRequested();
     pizzaService.loginUser(clientName, password)
-        .then(e => dispatch(correctLogin(e.clientName, e.password, e.id)))
-        .catch(err => dispatch(userError(err)));
-};
-
-const fetchRegistrationUserData = (pizzaService, dispatch) => (clientName, password) => {
-    pizzaService.registerUser(clientName, password)
-        .then(() => dispatch(registrationSuccess()))
+        .then(res => {
+            if (res === 404) dispatch(userError(res));
+            dispatch(correctLogin(res.data[0].clientName, res.data[0].password, res.data[0].id))
+        })
         .catch(err => {
-            console.log(err);
             dispatch(userError(err))
         });
 };
 
-const fetchMakeOrderData = (pizzaService, dispatch) => (clientName, isReady, cooking_time) => {
+const fetchRegistrationUserData = (pizzaService) => (clientName, password) => dispatch => {
+    pizzaService.registerUser(clientName, password)
+        .then(res => {
+            if (res === 409) {
+                dispatch(dataExistErr(res));
+            }
+            dispatch(registrationSuccess(res))
+        })
+        .catch(err => {
+            dispatch(userError(err))
+        });
+};
+
+const fetchMakeOrderData = (pizzaService) => (clientName, isReady, cooking_time) => dispatch => {
     pizzaService.makeOrder(clientName, isReady, cooking_time)
         .then(e => {
             dispatch(makeOrderSuccess(e))
         })
-        .catch(error => console.error(error));
+        .catch(error => console.userError(error));
 };
 
-const fetchUserOrderHistory = (pizzaService, dispatch) => (clientName) => {
+const fetchUserOrderHistory = (pizzaService, dispatch) => clientName => {
     userHistoryRequested();
     pizzaService.getUserOrderHistory(clientName)
         .then(e => dispatch(getUserHistory(e)))
-        .catch(error => console.error(error))
+        .catch(error => console.userError(error))
 };
 
 export {
@@ -76,5 +91,3 @@ export {
     fetchUserOrderHistory,
     userLogout
 };
-
-// clientId === current clientId

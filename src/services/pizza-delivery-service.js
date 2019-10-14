@@ -14,14 +14,10 @@ export default class PizzaService {
             "password": password
         })
             .then(res => {
-                alert('Success!');
-                console.log(res.data);
-
-                return res.data[0];
+                return res;
             })
             .catch(error => {
-                alert('Incorrect username');
-                console.error(error);
+                return error.response.status;
             });
     };
 
@@ -31,15 +27,10 @@ export default class PizzaService {
             "password": password
         })
             .then(res => {
-                alert('Now you can log in');
-                return res.data[0];
+                return res.data;
             })
             .catch(error => {
-                if (error.response.status === 409) {
-                    alert('Username is already registered');
-                } else {
-                    alert('Something is wrong');
-                }
+                console.error(error);
             });
     };
 
@@ -54,15 +45,14 @@ export default class PizzaService {
                     alert('Your cart is empty');
                     return;
                 }
-
                 return res.data;
             })
-            .catch(error => console.error(error))
+            .catch(error => console.userError(error))
     };
 
     getUserOrderHistory = async (clientName) => {
         return await axios.get(`${this._basicUrl}history/${clientName}/`)
             .then(res => res.data)
-            .catch(error => console.error(error));
+            .catch(error => console.userError(error));
     };
 }

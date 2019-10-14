@@ -6,8 +6,11 @@ const HomePage = () => {
 
     return(
         <div>
+            <div className="row justify-content-center alert-success alert">
+                You are logged in. Add some pizza to your cart
+            </div>
             <MenuList />
-            <CartTable/>
+            <CartTable />
         </div>
     );
 };
