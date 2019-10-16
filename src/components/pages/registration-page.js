@@ -8,13 +8,14 @@ import {Redirect} from "react-router-dom";
 import Dialog from 'react-bootstrap-dialog';
 import {bindActionCreators} from "redux";
 import SignInError from "../sign-in-error";
-import RegistrationSuccess from "../../registration-success";
+import RegistrationSuccess from "../registration-success";
 
 class RegistrationPage extends Component {
 
     state = {
         clientName: '',
-        password: ''
+        password: '',
+        showErrorDiv: false
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -26,7 +27,7 @@ class RegistrationPage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         if (this.state.clientName === '' || this.state.password === '') {
-            e.preventDefault();
+
             return this.dialog.show({
                 title: 'Empty fields',
                 body: 'Enter nickname and password',
@@ -78,8 +79,8 @@ class RegistrationPage extends Component {
     };
 }
 
-const mapStateToProps = ( {clientName, userErrors, signUpSuccess }) => {
-    return { clientName, userErrors, signUpSuccess };
+const mapStateToProps = ( {clientName, signupErrors, signUpSuccess }) => {
+    return { clientName, userErrors: signupErrors, signUpSuccess };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {

@@ -47,7 +47,7 @@ class LoginPage extends Component {
 
         return (
             <form className="reg-page__form">
-                { this.props.userErrors.length !== 0 ? <SignInError errorBody="Incorrect username or password" errorHeader="Error" /> : null }
+                { this.props.signinErrors.length !== 0 ? <SignInError errorBody="Incorrect username or password" errorHeader="Error" /> : null }
                 <h3>Login below</h3>
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR NAME</p>
@@ -76,8 +76,8 @@ class LoginPage extends Component {
     };
 }
 
-const mapStateToProps = ({ userErrors, clientName, isAuthenticated, loading}) => {
-    return { userErrors, clientName, isAuthenticated, loading };
+const mapStateToProps = ({ signinErrors, clientName, isAuthenticated, loading}) => {
+    return { clientName, signinErrors, isAuthenticated, loading };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {

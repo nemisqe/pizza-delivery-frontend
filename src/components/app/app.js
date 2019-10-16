@@ -7,6 +7,7 @@ import LoginPage from '../../components/pages/login-page';
 import RegistrationPage from '../../components/pages/registration-page';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import AppFooter from "../app-footer";
 
 
 const App = ({ isAuthenticated }) => {
@@ -47,7 +48,9 @@ const App = ({ isAuthenticated }) => {
                         <Redirect to="/login" />)
                 )} />
             </Switch>
+
         </main>
+            <AppFooter/>
         </React.Fragment>
     );
 };

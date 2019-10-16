@@ -44,12 +44,17 @@ const dataExistErr = (err) => ({
     payload: err
 });
 
+export const clearErrors = () => ({
+    type: 'CLEAR_ERRORS'
+});
+
 const fetchLoginUserData = (pizzaService) => (clientName, password) => dispatch => {
     loginDataRequested();
     pizzaService.loginUser(clientName, password)
         .then(res => {
+            console.log(res);
             if (res === 404) dispatch(userError(res));
-            dispatch(correctLogin(res.data[0].clientName, res.data[0].password, res.data[0].id))
+            dispatch(correctLogin(res.data[0].clientName, res.data[0].password, res.data[0].token))
         })
         .catch(err => {
             dispatch(userError(err))
@@ -62,6 +67,7 @@ const fetchRegistrationUserData = (pizzaService) => (clientName, password) => di
             if (res === 409) {
                 dispatch(dataExistErr(res));
             }
+            console.log(res);
             dispatch(registrationSuccess(res))
         })
         .catch(err => {
@@ -74,14 +80,14 @@ const fetchMakeOrderData = (pizzaService) => (clientName, isReady, cooking_time)
         .then(e => {
             dispatch(makeOrderSuccess(e))
         })
-        .catch(error => console.userError(error));
+        .catch(error => console.error(error));
 };
 
 const fetchUserOrderHistory = (pizzaService, dispatch) => clientName => {
     userHistoryRequested();
     pizzaService.getUserOrderHistory(clientName)
         .then(e => dispatch(getUserHistory(e)))
-        .catch(error => console.userError(error))
+        .catch(error => console.error(error))
 };
 
 export {

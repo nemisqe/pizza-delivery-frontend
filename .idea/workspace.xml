@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6eadd5-88c0-41dd-9b69-28536cd2612b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducers/root-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/pizza-menu-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/pizza-menu-actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/user-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/user-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart-table/cart-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-table/cart-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/error-boundry/error-boundry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/error-boundry/error-boundry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/history-list/history-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/history-list/history-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/history-list/history-page-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/history-list/history-page-list-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-list-item/menu-list-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/registration-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/registration-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/pizza-menu-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sign-in-error/sign-in-error.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sign-in-error/sign-in-error.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sign-in-error/sign-in-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sign-in-error/sign-in-error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/root-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration-success/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration-success/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration-success/registration-success.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration-success/registration-success.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration-success/registration-success.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration-success/registration-success.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/pizza-delivery-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pizza-delivery-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
@@ -34,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -74,15 +67,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\pizza-delivery-front\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pizza-delivery-front\src\components" />
       <recent name="E:\pizza-delivery-front\src\components\pages" />
       <recent name="E:\pizza-delivery-front\src\components\history-list" />
       <recent name="E:\pizza-delivery-front\src\utils" />
-      <recent name="E:\pizza-delivery-front\src\components" />
       <recent name="E:\pizza-delivery-front\src\actions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pizza-delivery-front\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -182,7 +175,9 @@
       <workItem from="1570964007792" duration="9642000" />
       <workItem from="1570979064260" duration="1702000" />
       <workItem from="1570986751049" duration="3487000" />
-      <workItem from="1571035788232" duration="21586000" />
+      <workItem from="1571035788232" duration="21943000" />
+      <workItem from="1571120896812" duration="20956000" />
+      <workItem from="1571207649316" duration="12319000" />
     </task>
     <servers />
   </component>

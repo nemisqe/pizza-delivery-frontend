@@ -1,10 +1,12 @@
 import React from 'react';
 import './sign-in-error.css';
 
-const SignInError = ({errorHeader, errorBody}) => {
+const SignInError = ({errorHeader, errorBody, hide}) => {
     return(
-        <div className="alert alert-danger" role="alert">
-           <p className="alert-link">{errorHeader}</p>{errorBody}
+        <div className={hide}>
+            <div className="alert alert-danger" role="alert">
+               <p className="alert-link">{errorHeader}</p>{errorBody}
+            </div>
         </div>
     );
 };

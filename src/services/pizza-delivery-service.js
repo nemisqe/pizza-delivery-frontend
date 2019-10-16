@@ -42,17 +42,16 @@ export default class PizzaService {
         })
             .then(res => {
                 if (res.data.cooking_time === 0) {
-                    alert('Your cart is empty');
                     return;
                 }
                 return res.data;
             })
-            .catch(error => console.userError(error))
+            .catch(error => console.error(error))
     };
 
     getUserOrderHistory = async (clientName) => {
         return await axios.get(`${this._basicUrl}history/${clientName}/`)
             .then(res => res.data)
-            .catch(error => console.userError(error));
+            .catch(error => console.error(error));
     };
 }
