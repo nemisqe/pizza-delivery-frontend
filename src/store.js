@@ -1,9 +1,7 @@
-import pizzaMenuReducer from './reducers/root-reducer';
+import reducer from './reducers';
 import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from 'redux-thunk';
-import createSagaMiddleware from 'redux-saga';
-const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(pizzaMenuReducer, applyMiddleware(thunkMiddleware, sagaMiddleware));
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 export default store;

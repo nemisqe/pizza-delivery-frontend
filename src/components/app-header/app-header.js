@@ -71,6 +71,7 @@ class AppHeader extends Component {
 
     componentDidMount() {
         const { checkAuth } = this.props;
+        console.log(this.props);
         checkAuth();
     }
 
@@ -106,7 +107,7 @@ class AppHeader extends Component {
     }
 }
 
-const mapStateToProps = ({ isAuthenticated, clientName }) => {
+const mapStateToProps = ({ UserReducer: {isAuthenticated, clientName} }) => {
     return { isAuthenticated, clientName };
 };
 

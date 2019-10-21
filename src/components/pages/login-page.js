@@ -16,12 +16,6 @@ class LoginPage extends Component {
         password: ''
     };
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.error !== prevProps) {
-
-        }
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
         if (this.state.clientName === '' || this.state.password === '') {
@@ -39,21 +33,29 @@ class LoginPage extends Component {
         }
     };
 
+    handlePassword = (e) => {
+        this.setState({ password: e.target.value })
+    };
+
+    handleUsername = (e) => {
+        this.setState({ clientName: e.target.value });
+    };
+
     render() {
 
-        if (window.localStorage.getItem('clientName')) {
+        if (window.localStorage.getItem('token')) {
             return <Redirect to='/' />
         }
 
         return (
             <form className="reg-page__form">
-                { this.props.signinErrors.length !== 0 ? <SignInError errorBody="Incorrect username or password" errorHeader="Error" /> : null }
+
                 <h3>Login below</h3>
                 <label className="reg-page__label">
                     <p className="label-txt">ENTER YOUR NAME</p>
                     <input type="text"
                            className="input"
-                           onChange={(e) => this.setState({ clientName: e.target.value })}
+                           onChange={(e) => this.handleUsername(e)}
                            value={this.state.clientName}/>
                     <div className="line-box">
                         <div className="line"></div>
@@ -64,7 +66,7 @@ class LoginPage extends Component {
                     <input type="password"
                            className="input"
                            value={this.state.password}
-                           onChange={(e) => this.setState({ password: e.target.value })}/>
+                           onChange={(e) => this.handlePassword(e)}/>
                     <div className="line-box">
                         <div className="line"></div>
                     </div>
@@ -76,7 +78,7 @@ class LoginPage extends Component {
     };
 }
 
-const mapStateToProps = ({ signinErrors, clientName, isAuthenticated, loading}) => {
+const mapStateToProps = ({ UserReducer: {signinErrors, clientName, isAuthenticated}, MenuReducer: {loading}}) => {
     return { clientName, signinErrors, isAuthenticated, loading };
 };
 

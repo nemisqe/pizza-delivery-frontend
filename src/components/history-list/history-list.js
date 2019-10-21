@@ -6,16 +6,19 @@ import { connect } from 'react-redux';
 import HistoryPageListItem from '../history-list/history-page-list-item';
 import Spinner from "../spinner";
 import PropTypes from 'prop-types';
+import {bindActionCreators} from "redux";
 
 class HistoryList extends Component {
 
     componentDidMount() {
         const { fetchUserOrderHistory, clientName } = this.props;
+        console.log(this.props);
         fetchUserOrderHistory(clientName);
     }
 
     render() {
         const { currentUserOrderHistory, loading } = this.props;
+        console.log(this.props);
 
         if (loading) {
             return <Spinner/>
@@ -46,14 +49,14 @@ class HistoryList extends Component {
     }
 }
 
-const mapStateToProps = ({ loading , currentUserOrderHistory, clientName, }) => {
+const mapStateToProps = ({ MenuReducer: {loading}, UserReducer: {clientName, currentUserOrderHistory} }) => {
     return { clientName, currentUserOrderHistory, loading };
 };
 
 const mapDispatchToProps = (dispatch, { pizzaService }) => {
-    return {
-        fetchUserOrderHistory: fetchUserOrderHistory(pizzaService, dispatch)
-    };
+    return bindActionCreators({
+        fetchUserOrderHistory: fetchUserOrderHistory(pizzaService)
+    }, dispatch);
 };
 
 export default compose(

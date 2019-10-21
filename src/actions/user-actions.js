@@ -44,10 +44,6 @@ const dataExistErr = (err) => ({
     payload: err
 });
 
-export const clearErrors = () => ({
-    type: 'CLEAR_ERRORS'
-});
-
 const fetchLoginUserData = (pizzaService) => (clientName, password) => dispatch => {
     loginDataRequested();
     pizzaService.loginUser(clientName, password)
@@ -83,7 +79,7 @@ const fetchMakeOrderData = (pizzaService) => (clientName, isReady, cooking_time)
         .catch(error => console.error(error));
 };
 
-const fetchUserOrderHistory = (pizzaService, dispatch) => clientName => {
+const fetchUserOrderHistory = (pizzaService) => clientName => dispatch => {
     userHistoryRequested();
     pizzaService.getUserOrderHistory(clientName)
         .then(e => dispatch(getUserHistory(e)))

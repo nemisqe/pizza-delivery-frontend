@@ -79,7 +79,7 @@ class RegistrationPage extends Component {
     };
 }
 
-const mapStateToProps = ( {clientName, signupErrors, signUpSuccess }) => {
+const mapStateToProps = ({ UserReducer: {clientName, signupErrors, signUpSuccess }}) => {
     return { clientName, userErrors: signupErrors, signUpSuccess };
 };
 

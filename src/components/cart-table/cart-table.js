@@ -106,7 +106,7 @@ class CartTable extends Component {
     };
 }
 
-const mapStateToProps = ({ cartItems, orderTotal, clientName }) => {
+const mapStateToProps = ({ CartReducer: {cartItems, orderTotal}, UserReducer: { clientName } }) => {
     return {
         items: cartItems,
         clientName,

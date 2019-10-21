@@ -39,6 +39,7 @@ class MenuListContainer extends Component {
     render() {
 
         const { pizzaMenu, loading, menuErrors, onAddedToCart } = this.props;
+        console.log(this.props);
 
         if (loading) {
             return <Spinner/>;
@@ -58,12 +59,13 @@ class MenuListContainer extends Component {
             loading: PropTypes.any,
             userError: PropTypes.array,
             onAddedToCart: PropTypes.func,
-            fetchMenu: PropTypes.func
+            fetchMenu: PropTypes.func,
+            menuErrors: PropTypes.array
         };
     }
 }
 
-const mapStateToProps = ({ pizzaMenu, loading, menuErrors }) => {
+const mapStateToProps = ({ MenuReducer: { pizzaMenu, loading, menuErrors }}) => {
     return { pizzaMenu, loading, menuErrors };
 };
 
