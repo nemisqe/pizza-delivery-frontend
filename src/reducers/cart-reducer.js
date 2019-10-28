@@ -1,7 +1,8 @@
 const initialState = {
     cartItems: [],
     currentOrder: [],
-    orderTotal: 0
+    orderTotal: 0,
+    pizzaMenu: []
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -31,7 +32,7 @@ const updateCartItems = (cartItems, item, idx) => {
 const updateTotalCookingTime = (pizza, orderTotal, quantity) => orderTotal + quantity * pizza.cooking_time;
 
 const updateOrder = (state, pizzaId, quantity) => {
-    const { cartData: {cartItems, orderTotal}, menuData: {pizzaMenu} } = state;
+    const { cartItems, orderTotal, pizzaMenu } = state;
 
     const pizza = pizzaMenu.find(({id}) => id === pizzaId);
 
@@ -65,6 +66,23 @@ const updateCartItem = (pizza, item = {}, quantity) => {
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'FETCH_MENU_REQUEST':
+            return {
+                ...state,
+                pizzaMenu: []
+            };
+        case 'FETCH_MENU_SUCCESS':
+            return {
+                ...state,
+                pizzaMenu: action.payload
+            };
+        case 'FETCH_MENU_FAILURE':
+            return {
+                ...state,
+                pizzaMenu: [],
+                loading: false,
+                menuErrors: action.payload
+            };
         case 'PIZZA_ADDED_TO_CART':
             return updateOrder(state, action.payload, 1);
 

@@ -37,9 +37,7 @@ class MenuListContainer extends Component {
     }
 
     render() {
-
         const { pizzaMenu, loading, menuErrors, onAddedToCart } = this.props;
-        console.log(this.props);
 
         if (loading) {
             return <Spinner/>;

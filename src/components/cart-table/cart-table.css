@@ -14,5 +14,15 @@
 }
 
 .order-button {
-    margin-right: 800px;
+}
+
+div.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 376px) {
+    .order-button {
+        width: 75px;
+    }
 }

@@ -69,22 +69,37 @@ WelcomeTitle.propTypes = {
 
 class AppHeader extends Component {
 
+    state = {
+        activeBurgerButton: true
+    };
+
     componentDidMount() {
         const { checkAuth } = this.props;
-        console.log(this.props);
         checkAuth();
     }
+
+    toggleBurgerButton = () => {
+        this.setState({activeBurgerButton: !this.state.activeBurgerButton})
+    };
 
     render() {
         const { isAuthenticated, userLogout, clientName } = this.props;
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <React.Fragment>
+            <nav className="app-header navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">Pizza-Delivery</Link>
+                <span className="welcome-title__mobile badge badge-primary">Welcome back, { clientName }!</span>
                 { isAuthenticated ? <WelcomeTitle clientName={clientName}/> : null }
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                <button
+                    onClick={this.toggleBurgerButton}
+                    className="navbar-toggler"
+                    type="button" data-toggle="collapse"
+                    data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
+
+                <div className={`navbar-collapse ${this.state.activeBurgerButton ? 'collapse' : ''}`} id="navbarNav">
                     <ul className="navbar-nav header-navigation-links">
                         <li className="nav-item" key="main-link">
                             <Link className="nav-link" to='/'>Home</Link>
@@ -94,6 +109,8 @@ class AppHeader extends Component {
                     </ul>
                 </div>
             </nav>
+
+            </React.Fragment>
         );
     }
 

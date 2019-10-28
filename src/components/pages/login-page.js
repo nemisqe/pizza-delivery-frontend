@@ -7,7 +7,6 @@ import { fetchLoginUserData } from '../../actions/user-actions';
 import {Redirect} from "react-router-dom";
 import Dialog from 'react-bootstrap-dialog';
 import {bindActionCreators} from "redux";
-import SignInError from "../sign-in-error";
 
 class LoginPage extends Component {
 

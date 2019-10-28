@@ -8,9 +8,9 @@ import RegistrationPage from '../../components/pages/registration-page';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AppFooter from "../app-footer";
+import './app.css';
 
 const App = ({ isAuthenticated }) => {
-    console.log(isAuthenticated);
     return (
         <React.Fragment>
         <AppHeader/>

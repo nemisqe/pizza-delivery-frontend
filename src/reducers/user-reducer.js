@@ -11,7 +11,6 @@ const checkAuth = (state) => {
     const lsName = window.localStorage.getItem('clientName');
     const lsToken = window.localStorage.getItem('token');
     if (lsToken) {
-        console.log(lsToken);
         return {
             ...state.userData,
             clientName: lsName,

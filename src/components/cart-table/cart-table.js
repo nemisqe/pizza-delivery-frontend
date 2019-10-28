@@ -97,8 +97,8 @@ class CartTable extends Component {
                 </table>
 
                 <div className="total">
-                    <button className="order-button" onClick={this.handleSubmit}>Make order</button>
-                    Total waiting time: {this.props.orderTotal} sec
+                    <button className="btn btn-primary btn-sm order-button" onClick={this.handleSubmit}>Make order</button>
+                    <span className="total-cooking-time__title">Total waiting time: {this.props.orderTotal} sec</span>
                 </div>
                 <Dialog ref={(component) => { this.dialog = component }} />
             </div>

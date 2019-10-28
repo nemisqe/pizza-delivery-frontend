@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6eadd5-88c0-41dd-9b69-28536cd2612b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/history-list/history-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/history-list/history-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/registration-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/registration-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-    </list>
-    <list id="9c9e4499-03bc-49ff-879d-1a2a205086bd" name="last commit" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducers/cart-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/menu-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/user-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/user-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/user-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app-footer/app-footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-footer/app-footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart-table/cart-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-table/cart-table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cart-table/cart-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-table/cart-table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/history-list/history-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/history-list/history-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/history-list/history-page-list-item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/history-list/history-page-list-item.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu-list/menu-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/cart-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cart-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/menu-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/menu-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/root-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user-reducer.js" afterDir="false" />
     </list>
+    <list id="d1d71ee7-a872-4638-ac41-abd2190caf5e" name="Revert &quot;refactor&quot;" comment="Revert &quot;refactor&quot;&#10;&#10;This reverts commit a253f86b" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,33 +49,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/components/pages/login-page.js">
-      <ranges>
-        <range start1="18" end1="24" start2="18" end2="18" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="41" end1="41" start2="35" end2="43" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="43" end1="44" start2="45" end2="46" changelist="1e6eadd5-88c0-41dd-9b69-28536cd2612b" />
-        <range start1="49" end1="50" start2="51" end2="52" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="55" end1="56" start2="57" end2="58" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="66" end1="67" start2="68" end2="69" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="78" end1="79" start2="80" end2="81" changelist="1e6eadd5-88c0-41dd-9b69-28536cd2612b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/components/menu-list/menu-list.js">
-      <ranges>
-        <range start1="41" end1="41" start2="41" end2="42" changelist="1e6eadd5-88c0-41dd-9b69-28536cd2612b" />
-        <range start1="60" end1="61" start2="61" end2="63" changelist="1e6eadd5-88c0-41dd-9b69-28536cd2612b" />
-        <range start1="65" end1="66" start2="67" end2="68" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/store.js">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="1e6eadd5-88c0-41dd-9b69-28536cd2612b" />
-        <range start1="3" end1="5" start2="3" end2="3" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-        <range start1="6" end1="7" start2="4" end2="5" changelist="9c9e4499-03bc-49ff-879d-1a2a205086bd" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1S6DtAXuFwjmAiBw5yobOqXXs00" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -89,20 +59,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.karma.karma_node_package_dir" value="" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.eslintrc.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -134,14 +104,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\nemisqe\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\User\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1e6eadd5-88c0-41dd-9b69-28536cd2612b" name="Default" comment="" />
-      <changelist id="9c9e4499-03bc-49ff-879d-1a2a205086bd" name="last commit" comment="" />
       <created>1566807217725</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -218,6 +194,8 @@
       <workItem from="1571120896812" duration="20956000" />
       <workItem from="1571207649316" duration="17465000" />
       <workItem from="1571294102499" duration="11070000" />
+      <workItem from="1571993497402" duration="11920000" />
+      <workItem from="1572240469145" duration="6611000" />
     </task>
     <servers />
   </component>

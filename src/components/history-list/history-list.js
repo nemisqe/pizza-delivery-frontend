@@ -12,13 +12,11 @@ class HistoryList extends Component {
 
     componentDidMount() {
         const { fetchUserOrderHistory, clientName } = this.props;
-        console.log(this.props);
         fetchUserOrderHistory(clientName);
     }
 
     render() {
         const { currentUserOrderHistory, loading } = this.props;
-        console.log(this.props);
 
         if (loading) {
             return <Spinner/>
