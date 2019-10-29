@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/index.html/static/css/main.82550c43.chunk.css",
-    "main.js": "/index.html/static/js/main.23bc6ec4.chunk.js",
-    "main.js.map": "/index.html/static/js/main.23bc6ec4.chunk.js.map",
-    "runtime~main.js": "/index.html/static/js/runtime~main.b962a0a0.js",
-    "runtime~main.js.map": "/index.html/static/js/runtime~main.b962a0a0.js.map",
-    "static/js/2.f6b365d0.chunk.js": "/index.html/static/js/2.f6b365d0.chunk.js",
-    "static/js/2.f6b365d0.chunk.js.map": "/index.html/static/js/2.f6b365d0.chunk.js.map",
-    "index.html": "/index.html/index.html",
-    "precache-manifest.3dd4e63ddb28726f1acdb80c7d142609.js": "/index.html/precache-manifest.3dd4e63ddb28726f1acdb80c7d142609.js",
-    "service-worker.js": "/index.html/service-worker.js",
-    "static/css/main.82550c43.chunk.css.map": "/index.html/static/css/main.82550c43.chunk.css.map"
+    "main.css": "/pizza-delivery-frontend/static/css/main.82550c43.chunk.css",
+    "main.js": "/pizza-delivery-frontend/static/js/main.23bc6ec4.chunk.js",
+    "main.js.map": "/pizza-delivery-frontend/static/js/main.23bc6ec4.chunk.js.map",
+    "runtime~main.js": "/pizza-delivery-frontend/static/js/runtime~main.4d74ab2d.js",
+    "runtime~main.js.map": "/pizza-delivery-frontend/static/js/runtime~main.4d74ab2d.js.map",
+    "static/js/2.f6b365d0.chunk.js": "/pizza-delivery-frontend/static/js/2.f6b365d0.chunk.js",
+    "static/js/2.f6b365d0.chunk.js.map": "/pizza-delivery-frontend/static/js/2.f6b365d0.chunk.js.map",
+    "index.html": "/pizza-delivery-frontend/index.html",
+    "precache-manifest.008bddc61317e919dc1a34f6461974ad.js": "/pizza-delivery-frontend/precache-manifest.008bddc61317e919dc1a34f6461974ad.js",
+    "service-worker.js": "/pizza-delivery-frontend/service-worker.js",
+    "static/css/main.82550c43.chunk.css.map": "/pizza-delivery-frontend/static/css/main.82550c43.chunk.css.map"
   }
 }
